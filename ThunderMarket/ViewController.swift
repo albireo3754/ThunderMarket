@@ -9,10 +9,15 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var mapImageView: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        mapImageView.image = UIImage(named: "map.png")
         // Do any additional setup after loading the view.
     }
+    
+    
 
 
 }
