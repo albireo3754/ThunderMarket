@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script type="text/javascript" src="map.json"></script>
+        <style>
+            table {
+                width: 500px;
+                height: 500px;
+                border-collapse: collapse; 
+                border-spacing: 0;
+            }
+            .red {
+                /* border: 1px solid red; */
+                background-color: red;
+                width: 0.1px;
+                height: 0.1px;
+            }
+            .blue {
+                /* border: 1px solid blue; */
+                background-color: blue;
+                width: 0.1px;
+                height: 0.1px;
+            }
+        </style>
+    </head>
+    <body>
+        <script>
+            
+            const body = document.querySelector("body");
+            const table = document.createElement("table");
+            table.style.borderColor = "red"
+            body.appendChild(table)
+            fetch("map.json")
+                .then(response => response.json())
+                .then(json => {
+                    for (let i = 0; i < 1000; i++) {
+                // console.log(i)
+                        const tr = table.appendChild(document.createElement("tr"))
+
+                        for (let j = 0; j < 1000; j++) {
+                            const td = document.createElement("td");
+                            if (json[i][j] != false) {
+                                td.className = "red"
+                                console.log(i, j)
+                            } else {
+                                td.className = "blue"
+                            }
+                            tr.appendChild(td)
+                }}});
+        </script>
+    </body>
+</html>
