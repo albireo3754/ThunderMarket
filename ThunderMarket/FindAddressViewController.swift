@@ -7,16 +7,20 @@
 
 import UIKit
 
-class FindAddressViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class FindAddressViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate {
+    
+    var isLoading = false
+    
+    @IBOutlet weak var mapTableView: UITableView!
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(nearTownCells)
+//        print(nearTownCells)
         return nearTownCells.list.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "NearTownCell", for: indexPath)
         cell.textLabel?.text = String(nearTownCells.list[indexPath.row])
-        print(nearTownCells.list[indexPath.row])
+//        print(nearTownCells.list[indexPath.row])
         return cell
     }
     
@@ -24,8 +28,14 @@ class FindAddressViewController: UIViewController, UITableViewDataSource, UITabl
 
     override func viewDidLoad() {
         super.viewDidLoad()
+//        self.delegate = self
         print(3)
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        print(4)
     }
     
     @IBAction func popView(_ sender: UIButton) {
@@ -38,6 +48,19 @@ class FindAddressViewController: UIViewController, UITableViewDataSource, UITabl
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
+    }
+    
+    // MARK: - ScrollView
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let scrollPosition = scrollView.contentOffset.y
+        // TODO: - frame이 뭔데?
+        let y = mapTableView.contentSize.height - scrollView.frame.height
+        print(scrollPosition, y)
+        if y == scrollPosition {
+            print("Y!")
+            self.nearTownCells.append()
+            mapTableView.reloadData()
+        }
     }
     
     /*
