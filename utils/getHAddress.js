@@ -6,9 +6,11 @@ const Kakao = {
   y: 36.40
 }
 let direction = [[1, 0], [0, 1], [-1, 0], [0, -1]];
-
+const gridSize = 100;
+const gridCenter = gridSize / 2
+const gridPositionDivide = gridSize / 10
 function makePositionFromRawPosition({ x, y }) {
-  return { x: Kakao.x + (x - 500) / 100, y: Kakao.y + (y - 500) / 100 }
+  return { x: Kakao.x + (x - gridCenter) / gridPositionDivide, y: Kakao.y + (y - gridCenter) / gridPositionDivide }
 }
 async function getTownWithPosition({ x, y }) {
   // await new Promise((resolve) => {setTimeout(resolve, 1)});
@@ -30,13 +32,13 @@ async function getTownWithPosition({ x, y }) {
   return { isTown: false }
 }
 function testmakePositionFromRawPosition() {
-  const result = makePositionFromRawPosition({x : 500, y: 500}); 
+  const result = makePositionFromRawPosition({x : gridCenter, y: gridCenter}); 
   console.log(result);
 }
 // console.log(testmakePositionFromRawPosition())
 async function testgetTownWithPositionFromKakao() {
   // const test = await getTownWithPosition({x: 127.1123, y: 37.42312}); 
-  const test = await getTownWithPosition(makePositionFromRawPosition({x : 0, y: 1000}));
+  const test = await getTownWithPosition(makePositionFromRawPosition({x : 0, y: gridSize}));
   console.log(test)
 }
 
@@ -44,27 +46,49 @@ async function testgetTownWithPositionFromKakao() {
 
 async function bfs() {
   const q = new Queue();
-  const visited = Array.from(Array(1000), () => Array.from(Array(1000), () => false));
-  q.push([500, 500]);
+  let saved;
+  if (fs.existsSync(__dirname + `/map_${gridSize}.json`)) {
+    const buffer = fs.readFileSync(__dirname + `/map.json${gridSize}`);
+    saved = JSON.parse(buffer);
+  } else {
+    saved = Array.from(Array(gridSize), () => Array.from(Array(gridSize), () => false)); 
+  }  
+  // console.log(visited[500][500])
+  const visited = Array.from(Array(gridSize), () => Array.from(Array(gridSize), () => false));
+  q.push([gridCenter, gridCenter]);
   try {
     while (q.length) {
       let [i, j] = q.pop();
       for (let [di, dj] of direction) {
         const [ni, nj] = [di + i, dj + j];
         console.log(ni, nj, di , dj)
-        if (0 <= ni && ni < 1000 && 0<= nj && nj < 1000 && !visited[ni][nj]) {
-          const data = await getTownWithPosition(makePositionFromRawPosition({x : ni, y: nj}));
-          if (data.isTown) {
-            const { address_name, x, y } = data;
-            console.log(data.address_name);
-            visited[ni][nj] = { address_name, x, y };
-            q.push([ni, nj]);
+        if (0 <= ni && ni < gridSize && 0<= nj && nj < gridSize && !visited[ni][nj]) {
+          if (!saved[ni][nj]) {
+            const data = await getTownWithPosition(makePositionFromRawPosition({x : ni, y: nj}));
+            
+            if (data.isTown) {
+              const { address_name, x, y } = data;
+              if (address_name.length == 2) {
+                visited[ni][nj] = true
+                continue
+              }
+              saved[ni][nj] = { address_name, x, y };
+              console.log(`address: ${address_name}, x: ${x}, y: ${y}`);
+            } else {
+              console.log("마을은 없음")
+            }
+          } else {
+            console.log("이미조사함")
           }
+          visited[ni][nj] = true
+          q.push([ni, nj]);
         }
       }
     }
-  } finally {
-    fs.writeFileSync("map.json", JSON.stringify(visited)) 
+  } catch(e) {
+   console.log(e) 
+  }finally {
+    fs.writeFileSync(`map_${gridSize}.json`, JSON.stringify(saved)) 
   }  
 }
 bfs()

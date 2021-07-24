@@ -9,6 +9,7 @@ import Foundation
 
 class Town {
     var list = [String]()
+    
     var cnt = 0
     init() {
         append()
