@@ -10,6 +10,7 @@ import UIKit
 class PhoneAuthViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var phoneTextField: UITextField!
+    @IBOutlet weak var getAuthMessageButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -45,10 +46,18 @@ class PhoneAuthViewController: UIViewController, UITextFieldDelegate {
         if text.count == 4 || text.count == 9 {
             if self.getLastWord(from: text) == " " {
                 sender.text?.removeLast()
-                return
+            } else {
+                sender.text = String(text[text.startIndex..<text.index(before: text.endIndex)]) + " " + self.getLastWord(from: text)
+                print(sender.text)
             }
-            sender.text = String(text[text.startIndex..<text.index(before: text.endIndex)]) + " " + self.getLastWord(from: text)
+            if sender.text!.count <= 8 {
+                self.getAuthMessageButton.isEnabled = false
+            }
+            else {
+                self.getAuthMessageButton.isEnabled = true
+            }
         }
+        
         
     }
     func getLastWord(from string: String) -> String {

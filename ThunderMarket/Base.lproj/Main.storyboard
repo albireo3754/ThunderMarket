@@ -194,11 +194,11 @@
                                     <outlet property="delegate" destination="A6f-9v-y8G" id="t2Z-bi-RpF"/>
                                 </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CTJ-fj-cte">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CTJ-fj-cte">
                                 <rect key="frame" x="28" y="219" width="247" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" title="인증문자 받기"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="전화번호가 변경되었나요? 이메일로 계정 찾기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cQa-tO-sK6">
                                 <rect key="frame" x="37" y="274" width="270" height="18"/>
@@ -213,6 +213,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="전화번호 인증" id="H8G-TA-qyw"/>
                     <connections>
+                        <outlet property="getAuthMessageButton" destination="CTJ-fj-cte" id="GYk-SI-n0a"/>
                         <outlet property="phoneTextField" destination="ug3-8g-nqH" id="v2j-dq-OLF"/>
                     </connections>
                 </viewController>
