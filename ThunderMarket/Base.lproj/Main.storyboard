@@ -18,13 +18,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="번개마켓" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ol7-KD-fd2">
-                                <rect key="frame" x="97.5" y="100" width="125" height="44.5"/>
+                                <rect key="frame" x="97.5" y="144" width="125" height="44.5"/>
                                 <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="36"/>
                                 <color key="textColor" systemColor="systemYellowColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bPy-iz-Jgl">
-                                <rect key="frame" x="60" y="154.5" width="200" height="128"/>
+                                <rect key="frame" x="60" y="198.5" width="200" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="QOf-jV-9v9"/>
                                 </constraints>
@@ -43,13 +43,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="우리 동네 중고 직거래 번개 마켓" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LwF-bx-pnQ">
-                                <rect key="frame" x="24.5" y="302.5" width="271" height="26.5"/>
+                                <rect key="frame" x="24.5" y="346.5" width="271" height="26.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xjH-ch-kZC">
-                                <rect key="frame" x="36.5" y="344" width="247" height="21"/>
+                                <rect key="frame" x="36.5" y="388" width="247" height="21"/>
                                 <string key="text">번개 마켓은 동네 직거래 마켓 이에요. 내 동네를 설정하고 시작해보세요!
 </string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -74,7 +74,7 @@
                             <constraint firstItem="LwF-bx-pnQ" firstAttribute="top" secondItem="bPy-iz-Jgl" secondAttribute="bottom" constant="20" id="yZn-1p-IEw"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="4qc-uI-1GW"/>
+                    <navigationItem key="navigationItem" id="Pif-sP-WCS"/>
                     <connections>
                         <outlet property="mapImageView" destination="bPy-iz-Jgl" id="ZAD-a3-rZv"/>
                     </connections>
@@ -92,7 +92,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gza-OF-cf6">
-                                <rect key="frame" x="10" y="50" width="300" height="34"/>
+                                <rect key="frame" x="10" y="54" width="300" height="34"/>
                                 <color key="backgroundColor" systemColor="systemYellowColor"/>
                                 <state key="normal" title="현재위치로 찾기">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -102,30 +102,12 @@
                                         <integer key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="A6f-9v-y8G" kind="show" id="Yc8-Y2-8xT"/>
+                                </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Rb-LM-SiC">
-                                <rect key="frame" x="10" y="10" width="300" height="30"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9qP-9B-eva">
-                                        <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="30" id="D2a-Y1-Fwd"/>
-                                            <constraint firstAttribute="height" constant="30" id="btV-G3-MpN"/>
-                                        </constraints>
-                                        <state key="normal" title="Button" image="arrow.left" catalog="system"/>
-                                        <connections>
-                                            <action selector="popView:" destination="cqu-Sc-KA8" eventType="touchUpInside" id="kzi-WV-mTC"/>
-                                        </connections>
-                                    </button>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="동명(읍,면)으로 검색 (ex. 서초동)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6R4-gH-h7m">
-                                        <rect key="frame" x="30" y="0.0" width="270" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                </subviews>
-                            </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NCZ-wI-ncP">
-                                <rect key="frame" x="0.0" y="94" width="320" height="474"/>
+                                <rect key="frame" x="0.0" y="98" width="320" height="470"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <activityIndicatorView key="tableFooterView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" id="09u-Ya-4QQ">
                                     <rect key="frame" x="0.0" y="121.5" width="320" height="60"/>
@@ -160,18 +142,23 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="NCZ-wI-ncP" firstAttribute="leading" secondItem="zBX-8U-40O" secondAttribute="leading" id="1Hg-m2-Mgd"/>
-                            <constraint firstItem="zBX-8U-40O" firstAttribute="trailing" secondItem="4Rb-LM-SiC" secondAttribute="trailing" constant="10" id="4yT-Bd-AWK"/>
-                            <constraint firstItem="4Rb-LM-SiC" firstAttribute="leading" secondItem="zBX-8U-40O" secondAttribute="leading" constant="10" id="9Pk-u0-Seu"/>
                             <constraint firstItem="zBX-8U-40O" firstAttribute="trailing" secondItem="Gza-OF-cf6" secondAttribute="trailing" constant="10" id="AGS-nM-gU2"/>
-                            <constraint firstItem="Gza-OF-cf6" firstAttribute="top" secondItem="4Rb-LM-SiC" secondAttribute="bottom" constant="10" id="Bek-vA-aks"/>
+                            <constraint firstItem="NCZ-wI-ncP" firstAttribute="top" secondItem="Gza-OF-cf6" secondAttribute="bottom" constant="10" id="DIy-k8-84Y"/>
                             <constraint firstItem="Gza-OF-cf6" firstAttribute="leading" secondItem="zBX-8U-40O" secondAttribute="leading" constant="10" id="Juc-Ta-fyX"/>
                             <constraint firstItem="NCZ-wI-ncP" firstAttribute="trailing" secondItem="zBX-8U-40O" secondAttribute="trailing" id="KLU-Sy-dye"/>
-                            <constraint firstItem="4Rb-LM-SiC" firstAttribute="top" secondItem="zBX-8U-40O" secondAttribute="top" constant="10" id="WaK-OX-yc5"/>
-                            <constraint firstItem="4Rb-LM-SiC" firstAttribute="top" secondItem="zBX-8U-40O" secondAttribute="top" constant="10" id="XYx-9W-WFz"/>
+                            <constraint firstItem="Gza-OF-cf6" firstAttribute="top" secondItem="zBX-8U-40O" secondAttribute="top" constant="10" id="REi-1V-qr2"/>
                             <constraint firstItem="NCZ-wI-ncP" firstAttribute="bottom" secondItem="zBX-8U-40O" secondAttribute="bottom" id="eZt-5I-i4u"/>
-                            <constraint firstItem="NCZ-wI-ncP" firstAttribute="top" secondItem="Gza-OF-cf6" secondAttribute="bottom" constant="10" id="uHu-pU-eAY"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="X2E-6b-nKb">
+                        <nil key="title"/>
+                        <textField key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="동명(읍,면)으로 검색 (ex. 서초동)" textAlignment="natural" minimumFontSize="17" id="6R4-gH-h7m">
+                            <rect key="frame" x="50" y="5" width="262" height="34"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                    </navigationItem>
                     <connections>
                         <outlet property="mapTableView" destination="NCZ-wI-ncP" id="ceT-Nq-7Ff"/>
                     </connections>
@@ -180,15 +167,72 @@
             </objects>
             <point key="canvasLocation" x="1732.5" y="92.957746478873247"/>
         </scene>
+        <!--전화번호 인증-->
+        <scene sceneID="BgQ-cU-Cjk">
+            <objects>
+                <viewController id="A6f-9v-y8G" customClass="PhoneAuthViewController" customModule="ThunderMarket" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Qic-cO-UkH" customClass="Phone">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UAa-cG-sU2">
+                                <rect key="frame" x="65" y="56" width="239" height="119"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <string key="text">당근마켓은 휴대폰 번호로 가입해요. 번호는 안전하게 보관되며
+어디에도 공개되지 않아요.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ug3-8g-nqH">
+                                <rect key="frame" x="28" y="177" width="247" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="phoneEditing:" destination="A6f-9v-y8G" eventType="editingChanged" id="dDK-od-0tB"/>
+                                    <outlet property="delegate" destination="A6f-9v-y8G" id="t2Z-bi-RpF"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CTJ-fj-cte">
+                                <rect key="frame" x="28" y="219" width="247" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Button"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="전화번호가 변경되었나요? 이메일로 계정 찾기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cQa-tO-sK6">
+                                <rect key="frame" x="37" y="274" width="270" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="iqd-HS-lrY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="전화번호 인증" id="H8G-TA-qyw"/>
+                    <connections>
+                        <outlet property="phoneTextField" destination="ug3-8g-nqH" id="v2j-dq-OLF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YbT-eQ-UFl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2433.75" y="92.957746478873247"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="ZpJ-Lj-RAd">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="tOo-MX-Dgt" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tOo-MX-Dgt" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="UOK-ng-Ncx">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="f7V-aB-DyD">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="WMz-4b-RUU"/>
                     </connections>
@@ -198,8 +242,11 @@
             <point key="canvasLocation" x="18.75" y="92.957746478873247"/>
         </scene>
     </scenes>
+    <color key="tintColor" systemColor="labelColor"/>
     <resources>
-        <image name="arrow.left" catalog="system" width="128" height="98"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
