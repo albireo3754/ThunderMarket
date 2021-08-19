@@ -8,12 +8,15 @@
 import UIKit
 
 class PhoneAuthViewController: UIViewController, UITextFieldDelegate {
-
+    
     @IBOutlet weak var phoneTextField: UITextField!
     @IBOutlet weak var getAuthMessageButton: UIButton!
+    @IBOutlet weak var matchAuthNumButton: UIButton!
+    @IBOutlet weak var tempAuthNumbLabel: UILabel!
+    var authNumber: String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.tempAuthNumbLabel.text = authNumber
         // Do any additional setup after loading the view.
     }
     
@@ -57,10 +60,24 @@ class PhoneAuthViewController: UIViewController, UITextFieldDelegate {
                 self.getAuthMessageButton.isEnabled = true
             }
         }
-        
-        
     }
+    
     func getLastWord(from string: String) -> String {
         return String(string[string.index(before: string.endIndex)..<string.endIndex])
+    }
+    
+    // TODO: - 실제 인증 문자가 오고, 결과와 매칭되도록 해야함
+    @IBAction func getAuthMessage(_ sender: UIButton) {
+        self.authNumber = "1234"
+        tempAuthNumbLabel?.text = authNumber
+    }
+    
+    @IBAction func authNumEditing(_ sender: UITextField) {
+        if sender.text?.count == 0 {
+            
+        }
+    }
+    @IBAction func inputAuthNum(_ sender: UIButton) {
+        
     }
 }

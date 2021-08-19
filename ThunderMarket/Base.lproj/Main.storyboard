@@ -199,6 +199,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="gray" title="인증문자 받기"/>
+                                <connections>
+                                    <action selector="getAuthMessage:" destination="A6f-9v-y8G" eventType="touchUpInside" id="5JM-pO-kUk"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="전화번호가 변경되었나요? 이메일로 계정 찾기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cQa-tO-sK6">
                                 <rect key="frame" x="37" y="274" width="270" height="18"/>
@@ -207,6 +210,54 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1234" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I5z-LG-bEQ">
+                                <rect key="frame" x="141" y="527" width="39" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6Lk-dH-SBL">
+                                <rect key="frame" x="37" y="323" width="247" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="phoneEditing:" destination="A6f-9v-y8G" eventType="editingChanged" id="xep-sN-TDC"/>
+                                    <outlet property="delegate" destination="A6f-9v-y8G" id="XKa-vM-QTW"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qff-3z-H17">
+                                <rect key="frame" x="37" y="365" width="247" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" title="인증문자 입력"/>
+                                <connections>
+                                    <action selector="getAuthMessage:" destination="A6f-9v-y8G" eventType="touchUpInside" id="JJe-N8-g7V"/>
+                                    <action selector="inputAuthNum:" destination="A6f-9v-y8G" eventType="touchUpInside" id="6uk-32-737"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="92A-dR-Qfc">
+                                <rect key="frame" x="37" y="323" width="247" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="authNumEditing:" destination="A6f-9v-y8G" eventType="editingChanged" id="ZvQ-Zj-Fn1"/>
+                                    <action selector="phoneEditing:" destination="A6f-9v-y8G" eventType="editingChanged" id="DDE-ds-eOt"/>
+                                    <outlet property="delegate" destination="A6f-9v-y8G" id="p80-sN-O3P"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q46-Ln-ALH">
+                                <rect key="frame" x="37" y="365" width="247" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" title="인증문자 입력"/>
+                                <connections>
+                                    <action selector="getAuthMessage:" destination="A6f-9v-y8G" eventType="touchUpInside" id="Txt-rd-EUc"/>
+                                    <action selector="inputAuthNum:" destination="A6f-9v-y8G" eventType="touchUpInside" id="IcN-Qj-LTZ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="iqd-HS-lrY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -214,7 +265,9 @@
                     <navigationItem key="navigationItem" title="전화번호 인증" id="H8G-TA-qyw"/>
                     <connections>
                         <outlet property="getAuthMessageButton" destination="CTJ-fj-cte" id="GYk-SI-n0a"/>
+                        <outlet property="matchAuthNumButton" destination="q46-Ln-ALH" id="TAq-53-Jix"/>
                         <outlet property="phoneTextField" destination="ug3-8g-nqH" id="v2j-dq-OLF"/>
+                        <outlet property="tempAuthNumbLabel" destination="I5z-LG-bEQ" id="ckh-tq-6YB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YbT-eQ-UFl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
