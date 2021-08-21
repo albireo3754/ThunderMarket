@@ -11,17 +11,18 @@
             }
             .red {
                 /* border: 1px solid red; */
-                background-color: red;
+                background-color: rgb(255, 238, 0);
                 padding: 0.01px;
-                width: 0.05px;
-                height: 0.05px;
+                width: 0.5px;
+                height: 0.5px;
             }
             .blue {
                 /* border: 1px solid blue; */
                 background-color: blue;
                 padding: 0.01px;
-                width: 0.05px;
-                height: 0.05px;
+                width: 0.5px;
+                height: 0.5px;
+                font-size: 0;
             }
         </style>
     </head>
@@ -35,17 +36,26 @@
             fetch("map.json")
                 .then(response => response.json())
                 .then(json => {
-                    for (let i = 0; i < 1000; i++) {
+                    let maxSize = 0
+                    for (let i = 0; i < json.length; i++) {
+                        for (let j = 0; j < json[1].length; j++) {
+                            if (maxSize < json[i][j].length) {
+                                maxSize = json[i][j].length
+                            }
+                        }
+                    }
+                    for (let i = 0; i < json.length; i++) {
                 // console.log(i)
                         const tr = table.appendChild(document.createElement("tr"))
 
-                        for (let j = 0; j < 1000; j++) {
+                        for (let j = 0; j < json[0].length; j++) {
                             const td = document.createElement("td");
-                            if (json[i][j] != false) {
+                            if (json[i][j].length == 0) {
                                 td.className = "red"
-                                console.log(i, j)
                             } else {
-                                td.className = "blue"
+                                td.className = "blue";
+                                td.textContent = `${String(json[i][j])}`;
+                                td.style.opacity = `${1/(1 + 3 * Math.exp(-json[i][j].length))}`
                             }
                             tr.appendChild(td)
                 }}});
