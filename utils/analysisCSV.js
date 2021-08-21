@@ -18,25 +18,30 @@ let range = {
   }
 }
 let [_, longitude, latitude] = rows[0].split(",")
-let grid = Array.from(Array(106), () => Array.from(Array(144), () => Array.from(Array(), () => {})));
+let grid = Array.from(Array(106), () => Array.from(Array(144), () => Array.from(Array(), () => {})))
+
 
 let Position = {
-  x: 3850,
-  y: 12470,
+  i: 3850,
+  j: 12470,
   correct: function(longitude, latitude) {
-    x = Math.floor((this.x - longitude * 100) / 5)
-    y = Math.floor((latitude * 100 - this.y) / 5)
-    return { x, y }
+    i = Math.floor((this.i - longitude * 100) / 5)
+    j = Math.floor((latitude * 100 - this.j) / 5)
+    return { i, j }
   }
 }
+let mapConfig = {
+  i: 3.850,
+  j: 12.470,
+  scale: 5,
+}
 
-
-for (let i = 0; i < rows.length; i ++) {
-  let [name, latitude, longitude] = rows[i].split(",");
+for (let idx = 0; idx < rows.length; idx ++) {
+  let [name, latitude, longitude] = rows[idx].split(",");
   range.update(name, Number(longitude), Number(latitude))
-  let { x, y } = Position.correct(longitude, latitude);
+  let { i, j } = Position.correct(longitude, latitude);
   // console.log(x, y);
-  grid[x][y].push(name);
+  grid[i][j].push(name);
 }
 
 function bfs() {
@@ -77,17 +82,18 @@ function bfs() {
 }
 let maxPos = {i: 0, j: 0}
 let a = 0
-grid.forEach((val, i) => {
-  val.forEach((val2, j) => {
-    if (a < val2.length) {
-      maxPos = {i, j}
-      a = val2.length
-    }
-  })});
-console.log(a,"1");
-console.log(maxPos);
+// grid.forEach((val, i) => {
+//   val.forEach((val2, j) => {
+//     if (a < val2.length) {
+//       maxPos = {i, j}
+//       a = val2.length
+//     }
+//   })});
+// console.log(a,"1");
+// console.log(maxPos);
 
 fs.writeFileSync(__dirname + "/map.json", JSON.stringify(grid));
+fs.writeFileSync(__dirname + "/mapConfig.json", JSON.stringify(mapConfig));
 // console.log(grid[maxPos.i][maxPos.j]);
 // bfs()
 console.log(range);

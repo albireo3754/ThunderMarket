@@ -36,11 +36,11 @@
             fetch("map.json")
                 .then(response => response.json())
                 .then(json => {
-                    let maxSize = 0
+                    let maxSize = 0;
                     for (let i = 0; i < json.length; i++) {
                         for (let j = 0; j < json[1].length; j++) {
                             if (maxSize < json[i][j].length) {
-                                maxSize = json[i][j].length
+                                maxSize = json[i][j].length;
                             }
                         }
                     }
