@@ -91,8 +91,13 @@ let a = 0
 //   })});
 // console.log(a,"1");
 // console.log(maxPos);
-
-fs.writeFileSync(__dirname + "/map.json", JSON.stringify(grid));
+let map = {
+  grid,
+  i: 3.850,
+  j: 12.470,
+  scale: 5,  
+}
+fs.writeFileSync(__dirname + "/map.json", JSON.stringify(map));
 fs.writeFileSync(__dirname + "/mapConfig.json", JSON.stringify(mapConfig));
 // console.log(grid[maxPos.i][maxPos.j]);
 // bfs()

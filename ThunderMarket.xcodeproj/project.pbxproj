@@ -17,6 +17,8 @@
 		DD63B28926AC830000E0B223 /* PhoneAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD63B28826AC830000E0B223 /* PhoneAuthViewController.swift */; };
 		DD72355226A353B000ECC1A7 /* FindAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD72355126A353B000ECC1A7 /* FindAddressViewController.swift */; };
 		DD72355426A45B2B00ECC1A7 /* Town.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD72355326A45B2B00ECC1A7 /* Town.swift */; };
+		DDE85F7326D1E55200C47B21 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE85F7226D1E55200C47B21 /* Map.swift */; };
+		DDE85F7A26D2231A00C47B21 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE85F7926D2231A00C47B21 /* Queue.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		DD63B28826AC830000E0B223 /* PhoneAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneAuthViewController.swift; sourceTree = "<group>"; };
 		DD72355126A353B000ECC1A7 /* FindAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindAddressViewController.swift; sourceTree = "<group>"; };
 		DD72355326A45B2B00ECC1A7 /* Town.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Town.swift; sourceTree = "<group>"; };
+		DDE85F7226D1E55200C47B21 /* Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
+		DDE85F7926D2231A00C47B21 /* Queue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,12 +73,14 @@
 				DD35D67526A2C7D200EAEA69 /* AppDelegate.swift */,
 				DD35D67726A2C7D200EAEA69 /* SceneDelegate.swift */,
 				DD72355326A45B2B00ECC1A7 /* Town.swift */,
+				DDE85F7926D2231A00C47B21 /* Queue.swift */,
 				DD35D67926A2C7D200EAEA69 /* ViewController.swift */,
 				DD35D67B26A2C7D200EAEA69 /* Main.storyboard */,
 				DD35D67E26A2C7D300EAEA69 /* Assets.xcassets */,
 				DD35D68026A2C7D300EAEA69 /* LaunchScreen.storyboard */,
 				DD35D68926A350D400EAEA69 /* map.png */,
 				DD35D68326A2C7D300EAEA69 /* Info.plist */,
+				DDE85F7226D1E55200C47B21 /* Map.swift */,
 			);
 			path = ThunderMarket;
 			sourceTree = "<group>";
@@ -153,6 +159,8 @@
 				DD72355226A353B000ECC1A7 /* FindAddressViewController.swift in Sources */,
 				DD35D67A26A2C7D200EAEA69 /* ViewController.swift in Sources */,
 				DD35D67626A2C7D200EAEA69 /* AppDelegate.swift in Sources */,
+				DDE85F7A26D2231A00C47B21 /* Queue.swift in Sources */,
+				DDE85F7326D1E55200C47B21 /* Map.swift in Sources */,
 				DD72355426A45B2B00ECC1A7 /* Town.swift in Sources */,
 				DD35D67826A2C7D200EAEA69 /* SceneDelegate.swift in Sources */,
 				DD63B28926AC830000E0B223 /* PhoneAuthViewController.swift in Sources */,

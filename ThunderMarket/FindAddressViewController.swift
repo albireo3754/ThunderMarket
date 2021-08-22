@@ -9,23 +9,28 @@ import UIKit
 
 class FindAddressViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     var isLoading = false
+    var list: [String]!
+    var nearTownCells: Town! = nil
     
     @IBOutlet weak var mapTableView: UITableView!
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(nearTownCells)
-        return nearTownCells.list.count
+        return list.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "NearTownCell", for: indexPath)
-        cell.textLabel?.text = String(nearTownCells.list[indexPath.row])
+        cell.textLabel?.text = String(list[indexPath.row])
         self.isLoading = false
         return cell
     }
-    
-    let nearTownCells = Town()
 
     override func viewDidLoad() {
+        let jsonDecoder = JSONDecoder()
+        guard let nearTownCells = Town() else {
+            fatalError("data load 실패");
+        }
+        self.nearTownCells = nearTownCells
+        self.list = nearTownCells.searchNear()
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
@@ -50,7 +55,7 @@ class FindAddressViewController: UIViewController, UITableViewDataSource, UITabl
         print(scrollPosition, y)
         if y - scrollPosition < CGFloat(150) && !self.isLoading {
             self.isLoading = true
-            self.nearTownCells.append()
+            list = nearTownCells.searchNear()
             mapTableView.reloadData()
         }
     }
