@@ -33,11 +33,9 @@ class FindAddressViewController: UIViewController, UITableViewDataSource, UITabl
         locationManager.delegate = self
         renderActivityIndicator()
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
     
     override func viewDidDisappear(_ animated: Bool) {
-        print(#function)
         super.viewDidDisappear(animated)
     }
     
@@ -72,8 +70,6 @@ class FindAddressViewController: UIViewController, UITableViewDataSource, UITabl
     @IBAction func findAddressByCurrentLocation(_ sender: Any) {
         self.locationManager.startUpdatingLocation()
         activityIndicator.startAnimating()
-        print(3)
-        print(self.locationManager.location?.coordinate)
     }
     func getLocationUsagePermission() {
         self.locationManager.requestWhenInUseAuthorization()
@@ -93,22 +89,15 @@ class FindAddressViewController: UIViewController, UITableViewDataSource, UITabl
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let location = locations[locations.count - 1]
-            
-//        guard let nearTownCells = Town(point: (x: 135, y: 35)) else {
-        print(location.coordinate.longitude)
-        print(location.coordinate.latitude)
         guard let nearTownCells = Town(point: (x: location.coordinate.longitude, y: location.coordinate.latitude)) else {
             fatalError("data load 실패");
         }
-
         self.nearTownCells = nearTownCells
         self.list = nearTownCells.searchNear()
         locationManager.stopUpdatingLocation()
         activityIndicator.stopAnimating()
         mapTableView.reloadData()
     }
-    
-//    func updateTableView(point: CLLocation)
     
     @IBAction func popView(_ sender: UIButton) {
         navigationController?.popViewController(animated: true)
@@ -134,14 +123,5 @@ class FindAddressViewController: UIViewController, UITableViewDataSource, UITabl
             mapTableView.reloadData()
         }
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
