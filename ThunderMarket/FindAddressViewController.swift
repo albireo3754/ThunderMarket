@@ -13,8 +13,9 @@ class FindAddressViewController: UIViewController, UITableViewDataSource, UITabl
     var list: [String]!
     var nearTownCells: Town! = nil
     var locationManager: CLLocationManager!
-    
+    var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var mapTableView: UITableView!
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return list.count
     }
@@ -30,19 +31,7 @@ class FindAddressViewController: UIViewController, UITableViewDataSource, UITabl
         let jsonDecoder = JSONDecoder()
         locationManager = CLLocationManager()
         locationManager.delegate = self
-//        locationManager.startUpdatingLocation()9
-//        locationManager.aauth
-//        if let coordinate = locationManager.location?.coordinate {
-//            guard let nearTownCells = Town(point: (x: 128, y: 35)) else {
-//                fatalError("data load 실패");
-//            }
-//
-//            self.nearTownCells = nearTownCells
-//        } else {
-//            self.list = []
-//        }
-        list = []
-        print(#function)
+        renderActivityIndicator()
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
@@ -50,6 +39,16 @@ class FindAddressViewController: UIViewController, UITableViewDataSource, UITabl
     override func viewDidDisappear(_ animated: Bool) {
         print(#function)
         super.viewDidDisappear(animated)
+    }
+    
+    func renderActivityIndicator() {
+        activityIndicator = UIActivityIndicatorView()
+        activityIndicator.center = self.view.center
+        activityIndicator.color = .systemYellow
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.style = .large
+        activityIndicator.startAnimating()
+        self.view.addSubview(activityIndicator)
     }
     
         
@@ -72,6 +71,7 @@ class FindAddressViewController: UIViewController, UITableViewDataSource, UITabl
     
     @IBAction func findAddressByCurrentLocation(_ sender: Any) {
         self.locationManager.startUpdatingLocation()
+        activityIndicator.startAnimating()
         print(3)
         print(self.locationManager.location?.coordinate)
     }
@@ -104,6 +104,7 @@ class FindAddressViewController: UIViewController, UITableViewDataSource, UITabl
         self.nearTownCells = nearTownCells
         self.list = nearTownCells.searchNear()
         locationManager.stopUpdatingLocation()
+        activityIndicator.stopAnimating()
         mapTableView.reloadData()
     }
     
