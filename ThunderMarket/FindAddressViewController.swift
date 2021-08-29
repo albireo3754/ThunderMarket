@@ -6,11 +6,13 @@
 //
 
 import UIKit
+import CoreLocation
 
-class FindAddressViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class FindAddressViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, CLLocationManagerDelegate {
     var isLoading = false
     var list: [String]!
     var nearTownCells: Town! = nil
+    var locationManager: CLLocationManager!
     
     @IBOutlet weak var mapTableView: UITableView!
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -26,14 +28,86 @@ class FindAddressViewController: UIViewController, UITableViewDataSource, UITabl
 
     override func viewDidLoad() {
         let jsonDecoder = JSONDecoder()
-        guard let nearTownCells = Town() else {
-            fatalError("data load 실패");
-        }
-        self.nearTownCells = nearTownCells
-        self.list = nearTownCells.searchNear()
+        locationManager = CLLocationManager()
+        locationManager.delegate = self
+//        locationManager.startUpdatingLocation()9
+//        locationManager.aauth
+//        if let coordinate = locationManager.location?.coordinate {
+//            guard let nearTownCells = Town(point: (x: 128, y: 35)) else {
+//                fatalError("data load 실패");
+//            }
+//
+//            self.nearTownCells = nearTownCells
+//        } else {
+//            self.list = []
+//        }
+        list = []
+        print(#function)
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        print(#function)
+        super.viewDidDisappear(animated)
+    }
+    
+        
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+    switch status {
+
+    case .authorizedAlways, .authorizedWhenInUse:
+        print("GPS 권한 설정됨")
+        self.locationManager.startUpdatingLocation() // 중요!
+    case .restricted, .notDetermined:
+        print("GPS 권한 설정되지 않음")
+        getLocationUsagePermission()
+    case .denied:
+        print("GPS 권한 요청 거부됨")
+        showDontHaveLocationAccessRights()
+    default:
+        print("GPS: Default")
+    }
+    }
+    
+    @IBAction func findAddressByCurrentLocation(_ sender: Any) {
+        self.locationManager.startUpdatingLocation()
+        print(3)
+        print(self.locationManager.location?.coordinate)
+    }
+    func getLocationUsagePermission() {
+        self.locationManager.requestWhenInUseAuthorization()
+    }
+    
+    func showDontHaveLocationAccessRights() {
+        guard let url = URL(string: UIApplication.openSettingsURLString) else {
+            return
+        }
+        let alert = UIAlertController(title: "위치정보 이용에 대한 엑세스 권한이 없어요", message: "설정 앱에서 권한을 수정할 수 있어요.", preferredStyle: .alert)
+        let cancel = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+        let setting = UIAlertAction(title: "지금 설정하기", style: .default, handler: { _ in UIApplication.shared.open(url)})
+        alert.addAction(cancel)
+        alert.addAction(setting)
+        present(alert, animated: true, completion: nil)
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let location = locations[locations.count - 1]
+            
+//        guard let nearTownCells = Town(point: (x: 135, y: 35)) else {
+        print(location.coordinate.longitude)
+        print(location.coordinate.latitude)
+        guard let nearTownCells = Town(point: (x: location.coordinate.longitude, y: location.coordinate.latitude)) else {
+            fatalError("data load 실패");
+        }
+
+        self.nearTownCells = nearTownCells
+        self.list = nearTownCells.searchNear()
+        locationManager.stopUpdatingLocation()
+        mapTableView.reloadData()
+    }
+    
+//    func updateTableView(point: CLLocation)
     
     @IBAction func popView(_ sender: UIButton) {
         navigationController?.popViewController(animated: true)
@@ -55,7 +129,7 @@ class FindAddressViewController: UIViewController, UITableViewDataSource, UITabl
         print(scrollPosition, y)
         if y - scrollPosition < CGFloat(150) && !self.isLoading {
             self.isLoading = true
-            list = nearTownCells.searchNear()
+            list = nearTownCells?.searchNear()
             mapTableView.reloadData()
         }
     }

@@ -7,15 +7,18 @@
 
 import UIKit
 
+
+
 class Town {
+    typealias Point = (x: Double, y: Double)
     var list = [String]()
     var map: Map
     var cnt = 0
     var queue = Queue<(i: Int, j: Int)>()
     var visited: [[Bool]]
-    
+
     // TODO: - 시작시 좌표를 받아야함
-    init?() {
+    init?(point: Point) {
         guard let dataAsset = NSDataAsset(name: "map") else {
             return nil
         }
@@ -23,7 +26,7 @@ class Town {
         guard let map = try? jsonDecoder.decode(Map.self, from: dataAsset.data) else {
             return nil
         }
-        queue.append((50, 50))
+        queue.append((Int((map.i - point.y) * 20), Int((point.x - map.j) * 20)))
         self.map = map
         self.visited = map.visited
     }

@@ -93,8 +93,8 @@ let a = 0
 // console.log(maxPos);
 let map = {
   grid,
-  i: 3.850,
-  j: 12.470,
+  i: 38.50,
+  j: 124.70,
   scale: 5,  
 }
 fs.writeFileSync(__dirname + "/map.json", JSON.stringify(map));

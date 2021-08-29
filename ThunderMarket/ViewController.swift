@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        mapImageView.image = UIImage(named: "map.png")
+//        mapImageView.image = UIImage(named: "map.png")
         // Do any additional setup after loading the view.
     }
     

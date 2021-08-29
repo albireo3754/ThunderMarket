@@ -14,6 +14,7 @@
 		DD35D67F26A2C7D300EAEA69 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD35D67E26A2C7D300EAEA69 /* Assets.xcassets */; };
 		DD35D68226A2C7D300EAEA69 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD35D68026A2C7D300EAEA69 /* LaunchScreen.storyboard */; };
 		DD35D68A26A350D400EAEA69 /* map.png in Resources */ = {isa = PBXBuildFile; fileRef = DD35D68926A350D400EAEA69 /* map.png */; };
+		DD38E88526DA8E50002D9FE6 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DD38E88426DA8E50002D9FE6 /* Settings.bundle */; };
 		DD63B28926AC830000E0B223 /* PhoneAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD63B28826AC830000E0B223 /* PhoneAuthViewController.swift */; };
 		DD72355226A353B000ECC1A7 /* FindAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD72355126A353B000ECC1A7 /* FindAddressViewController.swift */; };
 		DD72355426A45B2B00ECC1A7 /* Town.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD72355326A45B2B00ECC1A7 /* Town.swift */; };
@@ -31,6 +32,7 @@
 		DD35D68126A2C7D300EAEA69 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DD35D68326A2C7D300EAEA69 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DD35D68926A350D400EAEA69 /* map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map.png; sourceTree = "<group>"; };
+		DD38E88426DA8E50002D9FE6 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		DD63B28826AC830000E0B223 /* PhoneAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneAuthViewController.swift; sourceTree = "<group>"; };
 		DD72355126A353B000ECC1A7 /* FindAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindAddressViewController.swift; sourceTree = "<group>"; };
 		DD72355326A45B2B00ECC1A7 /* Town.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Town.swift; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 			children = (
 				DD63B28826AC830000E0B223 /* PhoneAuthViewController.swift */,
 				DD72355126A353B000ECC1A7 /* FindAddressViewController.swift */,
+				DD38E88426DA8E50002D9FE6 /* Settings.bundle */,
 				DD35D67526A2C7D200EAEA69 /* AppDelegate.swift */,
 				DD35D67726A2C7D200EAEA69 /* SceneDelegate.swift */,
 				DD72355326A45B2B00ECC1A7 /* Town.swift */,
@@ -144,6 +147,7 @@
 			files = (
 				DD35D68A26A350D400EAEA69 /* map.png in Resources */,
 				DD35D68226A2C7D300EAEA69 /* LaunchScreen.storyboard in Resources */,
+				DD38E88526DA8E50002D9FE6 /* Settings.bundle in Resources */,
 				DD35D67F26A2C7D300EAEA69 /* Assets.xcassets in Resources */,
 				DD35D67D26A2C7D200EAEA69 /* Main.storyboard in Resources */,
 			);
