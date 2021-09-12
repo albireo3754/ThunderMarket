@@ -8,7 +8,7 @@
 import UIKit
 import CoreLocation
 
-class FindAddressViewController: UIViewController,UITableViewDataSource, UITableViewDelegate {
+class FindAddressViewController: UIViewController {
     private var isLoading = false
     private var list: [String]!
     private var nearTownCells: Town! = nil
@@ -48,7 +48,22 @@ class FindAddressViewController: UIViewController,UITableViewDataSource, UITable
     @IBAction func popView(_ sender: UIButton) {
         navigationController?.popViewController(animated: true)
     }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let scrollPosition = scrollView.contentOffset.y
+        // TODO: - frame이 뭔데?
+        let y = mapTableView.contentSize.height - scrollView.frame.height
+        print(scrollPosition, y)
+        if y - scrollPosition < CGFloat(150) && !self.isLoading {
+            self.isLoading = true
+            list = nearTownCells?.searchNear()
+            mapTableView.reloadData()
+        }
+    }
 
+}
+
+extension FindAddressViewController: UITableViewDataSource, UITableViewDelegate {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -67,19 +82,6 @@ class FindAddressViewController: UIViewController,UITableViewDataSource, UITable
         self.isLoading = false
         return cell
     }
-    
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let scrollPosition = scrollView.contentOffset.y
-        // TODO: - frame이 뭔데?
-        let y = mapTableView.contentSize.height - scrollView.frame.height
-        print(scrollPosition, y)
-        if y - scrollPosition < CGFloat(150) && !self.isLoading {
-            self.isLoading = true
-            list = nearTownCells?.searchNear()
-            mapTableView.reloadData()
-        }
-    }
-
 }
 
 extension FindAddressViewController: CLLocationManagerDelegate {
@@ -129,3 +131,6 @@ extension FindAddressViewController: CLLocationManagerDelegate {
     }
 
 }
+
+
+
