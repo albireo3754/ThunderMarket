@@ -19,6 +19,7 @@
 		DD72355226A353B000ECC1A7 /* FindAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD72355126A353B000ECC1A7 /* FindAddressViewController.swift */; };
 		DD72355426A45B2B00ECC1A7 /* Town.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD72355326A45B2B00ECC1A7 /* Town.swift */; };
 		DD85F00026ECF51300347FA1 /* Location.gpx in Resources */ = {isa = PBXBuildFile; fileRef = DD85EFFF26ECF51300347FA1 /* Location.gpx */; };
+		DD85F00326EDD7B200347FA1 /* FindAddressPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD85F00226EDD7B200347FA1 /* FindAddressPresenter.swift */; };
 		DDE85F7326D1E55200C47B21 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE85F7226D1E55200C47B21 /* Map.swift */; };
 		DDE85F7A26D2231A00C47B21 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE85F7926D2231A00C47B21 /* Queue.swift */; };
 /* End PBXBuildFile section */
@@ -38,6 +39,7 @@
 		DD72355126A353B000ECC1A7 /* FindAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindAddressViewController.swift; sourceTree = "<group>"; };
 		DD72355326A45B2B00ECC1A7 /* Town.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Town.swift; sourceTree = "<group>"; };
 		DD85EFFF26ECF51300347FA1 /* Location.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Location.gpx; sourceTree = "<group>"; };
+		DD85F00226EDD7B200347FA1 /* FindAddressPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindAddressPresenter.swift; sourceTree = "<group>"; };
 		DDE85F7226D1E55200C47B21 /* Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
 		DDE85F7926D2231A00C47B21 /* Queue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -73,6 +75,7 @@
 		DD35D67426A2C7D200EAEA69 /* ThunderMarket */ = {
 			isa = PBXGroup;
 			children = (
+				DD85F00126EDD78800347FA1 /* Presenters */,
 				DD6A5FF626DB9B61008D5DF8 /* Models */,
 				DD6A5FF526DB9B51008D5DF8 /* Controllers */,
 				DD38E88426DA8E50002D9FE6 /* Settings.bundle */,
@@ -105,6 +108,14 @@
 				DDE85F7926D2231A00C47B21 /* Queue.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		DD85F00126EDD78800347FA1 /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+				DD85F00226EDD7B200347FA1 /* FindAddressPresenter.swift */,
+			);
+			path = Presenters;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -185,6 +196,7 @@
 				DD35D67626A2C7D200EAEA69 /* AppDelegate.swift in Sources */,
 				DDE85F7A26D2231A00C47B21 /* Queue.swift in Sources */,
 				DDE85F7326D1E55200C47B21 /* Map.swift in Sources */,
+				DD85F00326EDD7B200347FA1 /* FindAddressPresenter.swift in Sources */,
 				DD72355426A45B2B00ECC1A7 /* Town.swift in Sources */,
 				DD35D67826A2C7D200EAEA69 /* SceneDelegate.swift in Sources */,
 				DD63B28926AC830000E0B223 /* PhoneAuthViewController.swift in Sources */,
