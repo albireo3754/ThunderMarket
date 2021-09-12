@@ -20,6 +20,8 @@
 		DD72355426A45B2B00ECC1A7 /* Town.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD72355326A45B2B00ECC1A7 /* Town.swift */; };
 		DD85F00026ECF51300347FA1 /* Location.gpx in Resources */ = {isa = PBXBuildFile; fileRef = DD85EFFF26ECF51300347FA1 /* Location.gpx */; };
 		DD85F00326EDD7B200347FA1 /* FindAddressPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD85F00226EDD7B200347FA1 /* FindAddressPresenter.swift */; };
+		DD85F00626EDDF3E00347FA1 /* FindAddressViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD85F00526EDDF3E00347FA1 /* FindAddressViewProtocol.swift */; };
+		DD85F00826EDDF5E00347FA1 /* FindAddressPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD85F00726EDDF5E00347FA1 /* FindAddressPresenterProtocol.swift */; };
 		DDE85F7326D1E55200C47B21 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE85F7226D1E55200C47B21 /* Map.swift */; };
 		DDE85F7A26D2231A00C47B21 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE85F7926D2231A00C47B21 /* Queue.swift */; };
 /* End PBXBuildFile section */
@@ -40,6 +42,8 @@
 		DD72355326A45B2B00ECC1A7 /* Town.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Town.swift; sourceTree = "<group>"; };
 		DD85EFFF26ECF51300347FA1 /* Location.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Location.gpx; sourceTree = "<group>"; };
 		DD85F00226EDD7B200347FA1 /* FindAddressPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindAddressPresenter.swift; sourceTree = "<group>"; };
+		DD85F00526EDDF3E00347FA1 /* FindAddressViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindAddressViewProtocol.swift; sourceTree = "<group>"; };
+		DD85F00726EDDF5E00347FA1 /* FindAddressPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindAddressPresenterProtocol.swift; sourceTree = "<group>"; };
 		DDE85F7226D1E55200C47B21 /* Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
 		DDE85F7926D2231A00C47B21 /* Queue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -75,7 +79,7 @@
 		DD35D67426A2C7D200EAEA69 /* ThunderMarket */ = {
 			isa = PBXGroup;
 			children = (
-				DD85F00126EDD78800347FA1 /* Presenters */,
+				DD85F00426EDDF2200347FA1 /* Scenes */,
 				DD6A5FF626DB9B61008D5DF8 /* Models */,
 				DD6A5FF526DB9B51008D5DF8 /* Controllers */,
 				DD38E88426DA8E50002D9FE6 /* Settings.bundle */,
@@ -94,7 +98,6 @@
 			isa = PBXGroup;
 			children = (
 				DD63B28826AC830000E0B223 /* PhoneAuthViewController.swift */,
-				DD72355126A353B000ECC1A7 /* FindAddressViewController.swift */,
 				DD35D67926A2C7D200EAEA69 /* ViewController.swift */,
 			);
 			path = Controllers;
@@ -110,12 +113,23 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		DD85F00126EDD78800347FA1 /* Presenters */ = {
+		DD85F00426EDDF2200347FA1 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				DD85F00926EDDF6E00347FA1 /* FindAddress */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		DD85F00926EDDF6E00347FA1 /* FindAddress */ = {
+			isa = PBXGroup;
+			children = (
+				DD72355126A353B000ECC1A7 /* FindAddressViewController.swift */,
+				DD85F00526EDDF3E00347FA1 /* FindAddressViewProtocol.swift */,
+				DD85F00726EDDF5E00347FA1 /* FindAddressPresenterProtocol.swift */,
 				DD85F00226EDD7B200347FA1 /* FindAddressPresenter.swift */,
 			);
-			path = Presenters;
+			path = FindAddress;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -191,6 +205,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD85F00626EDDF3E00347FA1 /* FindAddressViewProtocol.swift in Sources */,
 				DD72355226A353B000ECC1A7 /* FindAddressViewController.swift in Sources */,
 				DD35D67A26A2C7D200EAEA69 /* ViewController.swift in Sources */,
 				DD35D67626A2C7D200EAEA69 /* AppDelegate.swift in Sources */,
@@ -198,6 +213,7 @@
 				DDE85F7326D1E55200C47B21 /* Map.swift in Sources */,
 				DD85F00326EDD7B200347FA1 /* FindAddressPresenter.swift in Sources */,
 				DD72355426A45B2B00ECC1A7 /* Town.swift in Sources */,
+				DD85F00826EDDF5E00347FA1 /* FindAddressPresenterProtocol.swift in Sources */,
 				DD35D67826A2C7D200EAEA69 /* SceneDelegate.swift in Sources */,
 				DD63B28926AC830000E0B223 /* PhoneAuthViewController.swift in Sources */,
 			);

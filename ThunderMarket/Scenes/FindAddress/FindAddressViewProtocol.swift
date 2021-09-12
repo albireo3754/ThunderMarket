@@ -1,5 +1,5 @@
 //
-//  FindAddressPresenter.swift
+//  FindAddressViewProtocol.swift
 //  ThunderMarket
 //
 //  Created by 윤상진 on 2021/09/12.
@@ -7,6 +7,5 @@
 
 import Foundation
 
-class FindAddressPresenter {
-    
+protocol FindAddressViewProtocol: AnyObject {
 }
