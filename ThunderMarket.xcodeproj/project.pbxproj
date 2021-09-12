@@ -79,6 +79,7 @@
 		DD35D67426A2C7D200EAEA69 /* ThunderMarket */ = {
 			isa = PBXGroup;
 			children = (
+				DD85F00A26EDE31C00347FA1 /* Presenter */,
 				DD85F00426EDDF2200347FA1 /* Scenes */,
 				DD6A5FF626DB9B61008D5DF8 /* Models */,
 				DD6A5FF526DB9B51008D5DF8 /* Controllers */,
@@ -97,6 +98,8 @@
 		DD6A5FF526DB9B51008D5DF8 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				DD72355126A353B000ECC1A7 /* FindAddressViewController.swift */,
+				DD85F00526EDDF3E00347FA1 /* FindAddressViewProtocol.swift */,
 				DD63B28826AC830000E0B223 /* PhoneAuthViewController.swift */,
 				DD35D67926A2C7D200EAEA69 /* ViewController.swift */,
 			);
@@ -116,7 +119,6 @@
 		DD85F00426EDDF2200347FA1 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				DD85F00926EDDF6E00347FA1 /* FindAddress */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -124,12 +126,18 @@
 		DD85F00926EDDF6E00347FA1 /* FindAddress */ = {
 			isa = PBXGroup;
 			children = (
-				DD72355126A353B000ECC1A7 /* FindAddressViewController.swift */,
-				DD85F00526EDDF3E00347FA1 /* FindAddressViewProtocol.swift */,
 				DD85F00726EDDF5E00347FA1 /* FindAddressPresenterProtocol.swift */,
 				DD85F00226EDD7B200347FA1 /* FindAddressPresenter.swift */,
 			);
 			path = FindAddress;
+			sourceTree = "<group>";
+		};
+		DD85F00A26EDE31C00347FA1 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				DD85F00926EDDF6E00347FA1 /* FindAddress */,
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
