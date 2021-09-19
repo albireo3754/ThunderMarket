@@ -28,6 +28,7 @@ struct Queue<T> {
         stack1.append(item)
     }
     
+    @discardableResult
     mutating func pop() -> T? {
         if let lastItem = stack2.popLast() {
             return lastItem
