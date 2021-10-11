@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19115.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tOo-MX-Dgt">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tOo-MX-Dgt">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19107.4"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -110,12 +110,12 @@
                                 <rect key="frame" x="0.0" y="98" width="320" height="470"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <activityIndicatorView key="tableFooterView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" id="09u-Ya-4QQ">
-                                    <rect key="frame" x="0.0" y="121.5" width="320" height="60"/>
+                                    <rect key="frame" x="0.0" y="110.5" width="320" height="60"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </activityIndicatorView>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NearTownCell" textLabel="JjH-bu-BlT" style="IBUITableViewCellStyleDefault" id="DxA-uG-8V4">
-                                        <rect key="frame" x="0.0" y="50" width="320" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="320" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DxA-uG-8V4" id="Q9f-yI-BaC">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
@@ -137,17 +137,37 @@
                                     <outlet property="delegate" destination="cqu-Sc-KA8" id="4eI-Lg-404"/>
                                 </connections>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wkh-cZ-nTi">
+                                <rect key="frame" x="0.0" y="88" width="320" height="480"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="위치를 발견하지 못했습니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xAa-0h-Tar">
+                                        <rect key="frame" x="65" y="50" width="190" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="xAa-0h-Tar" firstAttribute="top" secondItem="Wkh-cZ-nTi" secondAttribute="top" constant="50" id="ebf-cF-Wnj"/>
+                                    <constraint firstItem="xAa-0h-Tar" firstAttribute="centerX" secondItem="Wkh-cZ-nTi" secondAttribute="centerX" id="tH6-EA-Tum"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="zBX-8U-40O"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Wkh-cZ-nTi" firstAttribute="trailing" secondItem="zBX-8U-40O" secondAttribute="trailing" id="1D0-2V-H2h"/>
                             <constraint firstItem="NCZ-wI-ncP" firstAttribute="leading" secondItem="zBX-8U-40O" secondAttribute="leading" id="1Hg-m2-Mgd"/>
+                            <constraint firstItem="Wkh-cZ-nTi" firstAttribute="leading" secondItem="zBX-8U-40O" secondAttribute="leading" id="7Wl-KY-Kud"/>
                             <constraint firstItem="zBX-8U-40O" firstAttribute="trailing" secondItem="Gza-OF-cf6" secondAttribute="trailing" constant="10" id="AGS-nM-gU2"/>
                             <constraint firstItem="NCZ-wI-ncP" firstAttribute="top" secondItem="Gza-OF-cf6" secondAttribute="bottom" constant="10" id="DIy-k8-84Y"/>
                             <constraint firstItem="Gza-OF-cf6" firstAttribute="leading" secondItem="zBX-8U-40O" secondAttribute="leading" constant="10" id="Juc-Ta-fyX"/>
                             <constraint firstItem="NCZ-wI-ncP" firstAttribute="trailing" secondItem="zBX-8U-40O" secondAttribute="trailing" id="KLU-Sy-dye"/>
                             <constraint firstItem="Gza-OF-cf6" firstAttribute="top" secondItem="zBX-8U-40O" secondAttribute="top" constant="10" id="REi-1V-qr2"/>
+                            <constraint firstItem="Wkh-cZ-nTi" firstAttribute="top" secondItem="Gza-OF-cf6" secondAttribute="bottom" id="Ykg-6Q-h5y"/>
                             <constraint firstItem="NCZ-wI-ncP" firstAttribute="bottom" secondItem="zBX-8U-40O" secondAttribute="bottom" id="eZt-5I-i4u"/>
+                            <constraint firstItem="Wkh-cZ-nTi" firstAttribute="bottom" secondItem="zBX-8U-40O" secondAttribute="bottom" id="yBD-eH-qyI"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="X2E-6b-nKb">
@@ -160,6 +180,7 @@
                         </textField>
                     </navigationItem>
                     <connections>
+                        <outlet property="failFindAddressView" destination="Wkh-cZ-nTi" id="6il-fk-SSI"/>
                         <outlet property="mapTableView" destination="NCZ-wI-ncP" id="ceT-Nq-7Ff"/>
                     </connections>
                 </viewController>

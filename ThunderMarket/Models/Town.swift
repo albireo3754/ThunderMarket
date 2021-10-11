@@ -5,26 +5,18 @@
 //  Created by 윤상진 on 2021/07/18.
 //
 
-import UIKit
+import Foundation
 
-class Town {
+struct Town {
     typealias Point = (x: Double, y: Double)
-    var list = [String]()
-    var map: Map
-    var cnt = 0
-    let dividedUnit = 30
-    var queue = Queue<(i: Int, j: Int)>()
-    var visited: [[Bool]]
+    private(set) var list = [String]()
+    private let map: Map
+    private var cnt = 0
+    private let dividedUnit = 30
+    private var queue = Queue<(i: Int, j: Int)>()
+    private var visited: [[Bool]]
 
-    // TODO: - 시작시 좌표를 받아야함
-    init?(point: Point) {
-        guard let dataAsset = NSDataAsset(name: "map") else {
-            return nil
-        }
-        let jsonDecoder = JSONDecoder()
-        guard let map = try? jsonDecoder.decode(Map.self, from: dataAsset.data) else {
-            return nil
-        }
+    init?(point: Point, map: Map) {
         queue.append((Int((map.i - point.y) * 20), Int((point.x - map.j) * 20)))
         self.map = map
         self.visited = map.visited
@@ -33,15 +25,13 @@ class Town {
 
 // MARK: - Search
 extension Town {
-    // TODO: - 이런 식으로 작성하면 메모리에 문제가 되지않을까?????
-    func searchNear() -> [String] {
+    mutating func search() {
         dividedBfs()
-        return list
     }
     
-    private func dividedBfs() {
-        cnt += 1
-        let upperBound = cnt * dividedUnit
+    private mutating func dividedBfs() {
+        list = []
+        let upperBound = dividedUnit
         let direction = [(1, 0), (0, 1), (-1, 0), (0, -1)]
         while queue.count != 0 {
             guard let (i, j) = queue.top else {

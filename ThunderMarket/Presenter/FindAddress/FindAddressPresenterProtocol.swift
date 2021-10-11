@@ -8,5 +8,6 @@
 import Foundation
 
 protocol FindAddressPresenterProtocol {
+    var town: Town { get set }
     func searchNearTown()
 }

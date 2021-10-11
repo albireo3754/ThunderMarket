@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DD257A1B26FB0039009B8115 /* TownViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD257A1A26FB0039009B8115 /* TownViewModel.swift */; };
 		DD35D67626A2C7D200EAEA69 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD35D67526A2C7D200EAEA69 /* AppDelegate.swift */; };
 		DD35D67826A2C7D200EAEA69 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD35D67726A2C7D200EAEA69 /* SceneDelegate.swift */; };
 		DD35D67A26A2C7D200EAEA69 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD35D67926A2C7D200EAEA69 /* ViewController.swift */; };
@@ -23,11 +24,13 @@
 		DD85F00626EDDF3E00347FA1 /* FindAddressViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD85F00526EDDF3E00347FA1 /* FindAddressViewProtocol.swift */; };
 		DD85F00826EDDF5E00347FA1 /* FindAddressPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD85F00726EDDF5E00347FA1 /* FindAddressPresenterProtocol.swift */; };
 		DDD935D726F64D730002CC49 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD935D626F64D730002CC49 /* Observable.swift */; };
+		DDD935D926F65DFF0002CC49 /* TownListsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD935D826F65DFF0002CC49 /* TownListsViewModel.swift */; };
 		DDE85F7326D1E55200C47B21 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE85F7226D1E55200C47B21 /* Map.swift */; };
 		DDE85F7A26D2231A00C47B21 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE85F7926D2231A00C47B21 /* Queue.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DD257A1A26FB0039009B8115 /* TownViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TownViewModel.swift; sourceTree = "<group>"; };
 		DD35D67226A2C7D200EAEA69 /* ThunderMarket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThunderMarket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD35D67526A2C7D200EAEA69 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DD35D67726A2C7D200EAEA69 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -46,6 +49,7 @@
 		DD85F00526EDDF3E00347FA1 /* FindAddressViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindAddressViewProtocol.swift; sourceTree = "<group>"; };
 		DD85F00726EDDF5E00347FA1 /* FindAddressPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindAddressPresenterProtocol.swift; sourceTree = "<group>"; };
 		DDD935D626F64D730002CC49 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		DDD935D826F65DFF0002CC49 /* TownListsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TownListsViewModel.swift; sourceTree = "<group>"; };
 		DDE85F7226D1E55200C47B21 /* Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
 		DDE85F7926D2231A00C47B21 /* Queue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -115,6 +119,8 @@
 				DD72355326A45B2B00ECC1A7 /* Town.swift */,
 				DDE85F7926D2231A00C47B21 /* Queue.swift */,
 				DDD935D626F64D730002CC49 /* Observable.swift */,
+				DDD935D826F65DFF0002CC49 /* TownListsViewModel.swift */,
+				DD257A1A26FB0039009B8115 /* TownViewModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -224,7 +230,9 @@
 				DDE85F7A26D2231A00C47B21 /* Queue.swift in Sources */,
 				DDE85F7326D1E55200C47B21 /* Map.swift in Sources */,
 				DD85F00326EDD7B200347FA1 /* FindAddressPresenter.swift in Sources */,
+				DD257A1B26FB0039009B8115 /* TownViewModel.swift in Sources */,
 				DD72355426A45B2B00ECC1A7 /* Town.swift in Sources */,
+				DDD935D926F65DFF0002CC49 /* TownListsViewModel.swift in Sources */,
 				DD85F00826EDDF5E00347FA1 /* FindAddressPresenterProtocol.swift in Sources */,
 				DD35D67826A2C7D200EAEA69 /* SceneDelegate.swift in Sources */,
 				DD63B28926AC830000E0B223 /* PhoneAuthViewController.swift in Sources */,

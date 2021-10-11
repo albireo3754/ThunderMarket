@@ -11,20 +11,52 @@ import CoreLocation
 class FindAddressViewController: UIViewController {
     private var isLoading = false
     private var list: [String]!
-    private var nearTownCells: Town! = nil
+//    private var nearTownCells: Town! = nil
     private var locationManager: CLLocationManager!
     private var activityIndicator: UIActivityIndicatorView!
-    
+    private var presenter: FindAddressPresenterProtocol!
+    private var townListsViewModel: TownListsViewModel!
+    @IBOutlet weak var failFindAddressView: UIView!
     @IBOutlet weak var mapTableView: UITableView!
     
     override func viewDidLoad() {
-        let jsonDecoder = JSONDecoder()
+        // MARK: Set LocationManger
         locationManager = CLLocationManager()
         locationManager.delegate = self
         renderActivityIndicator()
+        // MARK: Set Model
         list = []
         findAddressByCurrentLocation()
+        configureViewModel()
         super.viewDidLoad()
+    }
+    
+    private func configureViewModel() {
+        let jsonDecoder = JSONDecoder()
+        guard let dataAsset = NSDataAsset(name: "map"),
+              let map = try? jsonDecoder.decode(Map.self, from: dataAsset.data) else {
+            fatalError("내부 지도 파일이 망가졌습니다.")
+        }
+        townListsViewModel = TownListsViewModel(map: map)
+        townListsViewModel.town.listner = { [weak self] _ in
+            DispatchQueue.main.async {
+                self?.mapTableView.reloadData()
+            }
+            
+        }
+        townListsViewModel.isFindAddress.listner = { [weak self] isFindAddress in
+            guard let successView = self?.mapTableView,
+                  let failView = self?.failFindAddressView
+            else {
+                return
+            }
+            if isFindAddress {
+                self?.view.insertSubview(successView, aboveSubview: failView)
+            } else {
+                self?.view.insertSubview(successView, belowSubview: failView)
+            }
+        }
+        
     }
     
     private func renderActivityIndicator() {
@@ -42,7 +74,8 @@ class FindAddressViewController: UIViewController {
     }
     
     @IBAction func clickToFindAddressByCurrentLocation(_ sender: Any) {
-        findAddressByCurrentLocation()
+//        findAddressByCurrentLocation()
+        self.townListsViewModel.isFindAddress.value = !self.townListsViewModel.isFindAddress.value
     }
 
     @IBAction func popView(_ sender: UIButton) {
@@ -51,13 +84,10 @@ class FindAddressViewController: UIViewController {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let scrollPosition = scrollView.contentOffset.y
-        // TODO: - frame이 뭔데?
         let y = mapTableView.contentSize.height - scrollView.frame.height
-        print(scrollPosition, y)
         if y - scrollPosition < CGFloat(150) && !self.isLoading {
             self.isLoading = true
-            list = nearTownCells?.searchNear()
-            mapTableView.reloadData()
+            townListsViewModel.search()
         }
     }
 
@@ -73,12 +103,12 @@ extension FindAddressViewController: UITableViewDataSource, UITableViewDelegate 
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return list.count
+        return townListsViewModel.row
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "NearTownCell", for: indexPath)
-        cell.textLabel?.text = String(list[indexPath.row])
+        cell.textLabel?.text = townListsViewModel.townViewModels[indexPath.row].address
         self.isLoading = false
         return cell
     }
@@ -87,14 +117,10 @@ extension FindAddressViewController: UITableViewDataSource, UITableViewDelegate 
 extension FindAddressViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let location = locations[locations.count - 1]
-        guard let nearTownCells = Town(point: (x: location.coordinate.longitude, y: location.coordinate.latitude)) else {
-            fatalError("data load 실패");
-        }
-        self.nearTownCells = nearTownCells
-        self.list = nearTownCells.searchNear()
+        townListsViewModel.setTown(with: (x: location.coordinate.longitude, y: location.coordinate.latitude))
+        townListsViewModel.search()
         locationManager.stopUpdatingLocation()
         activityIndicator.stopAnimating()
-        mapTableView.reloadData()
     }
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
@@ -132,5 +158,5 @@ extension FindAddressViewController: CLLocationManagerDelegate {
 
 }
 
-
-
+extension FindAddressViewController: FindAddressViewProtocol {
+}

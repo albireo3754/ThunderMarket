@@ -8,14 +8,14 @@
 import Foundation
 
 class FindAddressPresenter {
-    let town: Town
+    var town: Town
     weak var view: FindAddressViewProtocol?
     init(town: Town, view: FindAddressViewProtocol) {
         self.town = town
     }
 }
 
-extension FindAddressPresenter: FindAddressPresenterProtocol {
+extension FindAddressPresenter: FindAddressPresenterProtocol {    
     func searchNearTown() {
     }
 }
