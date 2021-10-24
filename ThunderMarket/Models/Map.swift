@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Map: Codable {
+struct Map: Decodable {
     let i: Double
     let j: Double
     let scale: Int

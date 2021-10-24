@@ -7,47 +7,51 @@
 
 import Foundation
 import CoreGraphics
+import Combine
+import UIKit
 
 class TownListsViewModel {
-    var isFindAddress: Observable<Bool>
-    var town: Observable<Town?>
-    var townViewModels: [TownViewModel]
-    var map: Map
-    var row: Int {
-        return townViewModels.count
+    typealias Position = (x: Double, y: Double)
+    @Published var fetchData: Bool
+    @Published var lastSection: Int
+    var townListsDataSource: [[String]]
+    private var cancellableSet: Set<AnyCancellable>
+    private let townUseCase: TownListUseCase
+    
+    init(townUseCase: TownListUseCase) {
+        self.fetchData = false
+        self.lastSection = -1
+        self.cancellableSet = []
+        self.townListsDataSource = []
+        self.townUseCase = townUseCase
     }
     
-    init(map: Map) {
-        self.map = map
-        self.town = Observable(value: nil)
-        self.townViewModels = []
-        self.isFindAddress = Observable(value: false)
-    }
-    
-    func setTown(with point: (x: Double, y: Double)) {
-        guard let town = Town(point: point, map: map) else {
-            return
-        }
-        self.town.value = town
-    }
-    
-    func search() {
-        DispatchQueue.global().async { [weak self] in
-            self?.town.value?.search()
-            guard let town = self?.town.value?.list else {
-                return
-            }
-            var a = 0
-            for address in town {
-                for _ in 1...(1000000) {
-                    a += 1
-                    a -= 1
+    func fetchMapData(with position: Position) {
+        townUseCase.loadMapData(with: position)
+            .sink(receiveCompletion: {
+                switch $0 {
+                case .failure(let error):
+                    print(error)
+                case .finished:
+                    break
                 }
-                self?.townViewModels.append(TownViewModel(address: address))
-            }
-            if self?.isFindAddress.value == false {
-                self?.isFindAddress.value = true
-            }
-        }
+            }, receiveValue: {[weak self] in
+                self?.fetchData = $0
+            })
+            .store(in: &cancellableSet)
+    }
+    
+    // TODO: 애니메이션이 너무 빨리 업데이트되서 동시에 업데이트 해야하는 것을 고려해야하면 어떻게해야할까?
+    func search() {
+        townUseCase.search()?
+            .sink(receiveValue: { [weak self] in
+                self?.townListsDataSource.append($0)
+                guard let lastSection = self?.lastSection else {
+                    return
+                }
+                self?.lastSection += lastSection
+            })
+            .store(in: &cancellableSet)
+            
     }
 }

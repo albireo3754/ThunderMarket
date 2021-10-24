@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct Town {
-    typealias Point = (x: Double, y: Double)
+class Town {
+    typealias Position = (x: Double, y: Double)
     private(set) var list = [String]()
     private let map: Map
     private var cnt = 0
@@ -16,20 +16,19 @@ struct Town {
     private var queue = Queue<(i: Int, j: Int)>()
     private var visited: [[Bool]]
 
-    init?(point: Point, map: Map) {
-        queue.append((Int((map.i - point.y) * 20), Int((point.x - map.j) * 20)))
+    init(center: Position, map: Map) {
+        self.queue.append(
+            (Int((map.i - center.y) * 20),
+             Int((center.x - map.j) * 20)))
         self.map = map
         self.visited = map.visited
     }
-}
 
-// MARK: - Search
-extension Town {
-    mutating func search() {
-        dividedBfs()
+    func search() -> [String] {
+        return dividedBfs()
     }
     
-    private mutating func dividedBfs() {
+    private func dividedBfs() -> [String] {
         list = []
         let upperBound = dividedUnit
         let direction = [(1, 0), (0, 1), (-1, 0), (0, -1)]
@@ -48,10 +47,11 @@ extension Town {
                     list.append(contentsOf: map.grid[ni][nj])
                 }
                 if list.count >= upperBound {
-                    return
+                    return list
                 }
             }
             queue.pop()
         }
+        return list
     }
 }
