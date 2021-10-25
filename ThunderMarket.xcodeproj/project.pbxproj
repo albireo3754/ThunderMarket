@@ -18,6 +18,7 @@
 		DD38E88526DA8E50002D9FE6 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DD38E88426DA8E50002D9FE6 /* Settings.bundle */; };
 		DD475171271433AB00097865 /* TownListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD475170271433AB00097865 /* TownListUseCase.swift */; };
 		DD63B28926AC830000E0B223 /* PhoneAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD63B28826AC830000E0B223 /* PhoneAuthViewController.swift */; };
+		DD6D94A32726E8A100D353D7 /* FindAddressTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6D94A22726E8A100D353D7 /* FindAddressTests.swift */; };
 		DD72355226A353B000ECC1A7 /* FindAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD72355126A353B000ECC1A7 /* FindAddressViewController.swift */; };
 		DD72355426A45B2B00ECC1A7 /* Town.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD72355326A45B2B00ECC1A7 /* Town.swift */; };
 		DD7AD035272049A900BDEA4B /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7AD034272049A900BDEA4B /* Repository.swift */; };
@@ -30,6 +31,16 @@
 		DDE85F7326D1E55200C47B21 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE85F7226D1E55200C47B21 /* Map.swift */; };
 		DDE85F7A26D2231A00C47B21 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE85F7926D2231A00C47B21 /* Queue.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DD6D94A42726E8A100D353D7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DD35D66A26A2C7D200EAEA69 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DD35D67126A2C7D200EAEA69;
+			remoteInfo = ThunderMarket;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		DD257A1A26FB0039009B8115 /* TownViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TownViewModel.swift; sourceTree = "<group>"; };
@@ -45,6 +56,8 @@
 		DD38E88426DA8E50002D9FE6 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		DD475170271433AB00097865 /* TownListUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TownListUseCase.swift; sourceTree = "<group>"; };
 		DD63B28826AC830000E0B223 /* PhoneAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneAuthViewController.swift; sourceTree = "<group>"; };
+		DD6D94A02726E8A100D353D7 /* FindAddressTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FindAddressTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD6D94A22726E8A100D353D7 /* FindAddressTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindAddressTests.swift; sourceTree = "<group>"; };
 		DD72355126A353B000ECC1A7 /* FindAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindAddressViewController.swift; sourceTree = "<group>"; };
 		DD72355326A45B2B00ECC1A7 /* Town.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Town.swift; sourceTree = "<group>"; };
 		DD7AD034272049A900BDEA4B /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
@@ -66,6 +79,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DD6D949D2726E8A100D353D7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -74,6 +94,7 @@
 			children = (
 				DD85EFFF26ECF51300347FA1 /* Location.gpx */,
 				DD35D67426A2C7D200EAEA69 /* ThunderMarket */,
+				DD6D94A12726E8A100D353D7 /* FindAddressTests */,
 				DD35D67326A2C7D200EAEA69 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -82,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				DD35D67226A2C7D200EAEA69 /* ThunderMarket.app */,
+				DD6D94A02726E8A100D353D7 /* FindAddressTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -131,6 +153,14 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		DD6D94A12726E8A100D353D7 /* FindAddressTests */ = {
+			isa = PBXGroup;
+			children = (
+				DD6D94A22726E8A100D353D7 /* FindAddressTests.swift */,
+			);
+			path = FindAddressTests;
+			sourceTree = "<group>";
+		};
 		DD85F00426EDDF2200347FA1 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
@@ -175,17 +205,39 @@
 			productReference = DD35D67226A2C7D200EAEA69 /* ThunderMarket.app */;
 			productType = "com.apple.product-type.application";
 		};
+		DD6D949F2726E8A100D353D7 /* FindAddressTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DD6D94A82726E8A100D353D7 /* Build configuration list for PBXNativeTarget "FindAddressTests" */;
+			buildPhases = (
+				DD6D949C2726E8A100D353D7 /* Sources */,
+				DD6D949D2726E8A100D353D7 /* Frameworks */,
+				DD6D949E2726E8A100D353D7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DD6D94A52726E8A100D353D7 /* PBXTargetDependency */,
+			);
+			name = FindAddressTests;
+			productName = FindAddressTests;
+			productReference = DD6D94A02726E8A100D353D7 /* FindAddressTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		DD35D66A26A2C7D200EAEA69 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1250;
+				LastSwiftUpdateCheck = 1300;
 				LastUpgradeCheck = 1250;
 				TargetAttributes = {
 					DD35D67126A2C7D200EAEA69 = {
 						CreatedOnToolsVersion = 12.5.1;
+					};
+					DD6D949F2726E8A100D353D7 = {
+						CreatedOnToolsVersion = 13.0;
+						TestTargetID = DD35D67126A2C7D200EAEA69;
 					};
 				};
 			};
@@ -203,6 +255,7 @@
 			projectRoot = "";
 			targets = (
 				DD35D67126A2C7D200EAEA69 /* ThunderMarket */,
+				DD6D949F2726E8A100D353D7 /* FindAddressTests */,
 			);
 		};
 /* End PBXProject section */
@@ -218,6 +271,13 @@
 				DD35D67F26A2C7D300EAEA69 /* Assets.xcassets in Resources */,
 				DD85F00026ECF51300347FA1 /* Location.gpx in Resources */,
 				DD35D67D26A2C7D200EAEA69 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DD6D949E2726E8A100D353D7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,7 +307,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DD6D949C2726E8A100D353D7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD6D94A32726E8A100D353D7 /* FindAddressTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DD6D94A52726E8A100D353D7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DD35D67126A2C7D200EAEA69 /* ThunderMarket */;
+			targetProxy = DD6D94A42726E8A100D353D7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		DD35D67B26A2C7D200EAEA69 /* Main.storyboard */ = {
@@ -425,6 +501,56 @@
 			};
 			name = Release;
 		};
+		DD6D94A62726E8A100D353D7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6785P7H4GT;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = boostcamp.FindAddressTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ThunderMarket.app/ThunderMarket";
+			};
+			name = Debug;
+		};
+		DD6D94A72726E8A100D353D7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6785P7H4GT;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = boostcamp.FindAddressTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ThunderMarket.app/ThunderMarket";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -442,6 +568,15 @@
 			buildConfigurations = (
 				DD35D68726A2C7D300EAEA69 /* Debug */,
 				DD35D68826A2C7D300EAEA69 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DD6D94A82726E8A100D353D7 /* Build configuration list for PBXNativeTarget "FindAddressTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DD6D94A62726E8A100D353D7 /* Debug */,
+				DD6D94A72726E8A100D353D7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
