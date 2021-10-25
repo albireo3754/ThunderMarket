@@ -7,9 +7,13 @@
 
 import Foundation
 import Combine
+import UIKit
 
-class TownListUseCase {
-    typealias Position = TownListsViewModel.Position
+enum TownListUseCaseError: Error {
+    case NotYetSettingTown
+}
+
+class TownListUseCase: TownListUseCaseProtocol {
     private let localRepository: LocalRepository
     private var town: Town?
     
@@ -17,11 +21,7 @@ class TownListUseCase {
         self.localRepository = localRepository
     }
     
-    func setCenterPosition(with position: Position) {
-        setCenterPosition(with: position)
-    }
-    
-    func loadMapData(with position: Position) -> AnyPublisher<Bool, Error> {
+    func setTownList(with position: Position) -> AnyPublisher<Bool, Error> {
         if #available(iOS 14.0, *) {
             return localRepository.loadMapData()
                 .flatMap {[weak self] map -> AnyPublisher<Bool, Never> in
@@ -36,10 +36,14 @@ class TownListUseCase {
         return CurrentValueSubject(true).eraseToAnyPublisher()
     }
     
-    func search() -> AnyPublisher<[String], Never>? {
-        
-        return town?.search().publisher
-            .collect()
+    func lazySearch() -> AnyPublisher<[String], Error> {
+        let subject = CurrentValueSubject<[String], Error>([])
+        if let results = town?.search() {
+            subject.send(results)
+        } else {
+            subject.send(completion: .failure(TownListUseCaseError.NotYetSettingTown))
+        }
+        return subject
             .eraseToAnyPublisher()
     }
 }

@@ -10,15 +10,16 @@ import CoreGraphics
 import Combine
 import UIKit
 
+typealias Position = (x: Double, y: Double)
+
 class TownListsViewModel {
-    typealias Position = (x: Double, y: Double)
     @Published var fetchData: Bool
     @Published var lastSection: Int
     var townListsDataSource: [[String]]
     private var cancellableSet: Set<AnyCancellable>
-    private let townUseCase: TownListUseCase
+    private let townUseCase: TownListUseCaseProtocol
     
-    init(townUseCase: TownListUseCase) {
+    init(townUseCase: TownListUseCaseProtocol) {
         self.fetchData = false
         self.lastSection = -1
         self.cancellableSet = []
@@ -27,7 +28,7 @@ class TownListsViewModel {
     }
     
     func fetchMapData(with position: Position) {
-        townUseCase.loadMapData(with: position)
+        townUseCase.setTownList(with: position)
             .sink(receiveCompletion: {
                 switch $0 {
                 case .failure(let error):
@@ -43,8 +44,15 @@ class TownListsViewModel {
     
     // TODO: 애니메이션이 너무 빨리 업데이트되서 동시에 업데이트 해야하는 것을 고려해야하면 어떻게해야할까?
     func search() {
-        townUseCase.search()?
-            .sink(receiveValue: { [weak self] in
+        townUseCase.lazySearch()
+            .sink(receiveCompletion: {
+                switch $0 {
+                case .failure(let error):
+                    print(error)
+                case .finished:
+                    break
+                }
+            }, receiveValue: { [weak self] in
                 self?.townListsDataSource.append($0)
                 guard let lastSection = self?.lastSection else {
                     return

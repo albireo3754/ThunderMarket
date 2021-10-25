@@ -19,6 +19,7 @@
 		DD475171271433AB00097865 /* TownListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD475170271433AB00097865 /* TownListUseCase.swift */; };
 		DD63B28926AC830000E0B223 /* PhoneAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD63B28826AC830000E0B223 /* PhoneAuthViewController.swift */; };
 		DD6D94A32726E8A100D353D7 /* FindAddressTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6D94A22726E8A100D353D7 /* FindAddressTests.swift */; };
+		DD6D94AA2726E98100D353D7 /* TownListUseCaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6D94A92726E98100D353D7 /* TownListUseCaseProtocol.swift */; };
 		DD72355226A353B000ECC1A7 /* FindAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD72355126A353B000ECC1A7 /* FindAddressViewController.swift */; };
 		DD72355426A45B2B00ECC1A7 /* Town.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD72355326A45B2B00ECC1A7 /* Town.swift */; };
 		DD7AD035272049A900BDEA4B /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7AD034272049A900BDEA4B /* Repository.swift */; };
@@ -58,6 +59,7 @@
 		DD63B28826AC830000E0B223 /* PhoneAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneAuthViewController.swift; sourceTree = "<group>"; };
 		DD6D94A02726E8A100D353D7 /* FindAddressTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FindAddressTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD6D94A22726E8A100D353D7 /* FindAddressTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindAddressTests.swift; sourceTree = "<group>"; };
+		DD6D94A92726E98100D353D7 /* TownListUseCaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TownListUseCaseProtocol.swift; sourceTree = "<group>"; };
 		DD72355126A353B000ECC1A7 /* FindAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindAddressViewController.swift; sourceTree = "<group>"; };
 		DD72355326A45B2B00ECC1A7 /* Town.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Town.swift; sourceTree = "<group>"; };
 		DD7AD034272049A900BDEA4B /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 				DD257A1A26FB0039009B8115 /* TownViewModel.swift */,
 				DD475170271433AB00097865 /* TownListUseCase.swift */,
 				DD7AD034272049A900BDEA4B /* Repository.swift */,
+				DD6D94A92726E98100D353D7 /* TownListUseCaseProtocol.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -298,6 +301,7 @@
 				DD85F00326EDD7B200347FA1 /* FindAddressPresenter.swift in Sources */,
 				DD257A1B26FB0039009B8115 /* TownViewModel.swift in Sources */,
 				DD475171271433AB00097865 /* TownListUseCase.swift in Sources */,
+				DD6D94AA2726E98100D353D7 /* TownListUseCaseProtocol.swift in Sources */,
 				DD72355426A45B2B00ECC1A7 /* Town.swift in Sources */,
 				DD7AD035272049A900BDEA4B /* Repository.swift in Sources */,
 				DDD935D926F65DFF0002CC49 /* TownListsViewModel.swift in Sources */,
