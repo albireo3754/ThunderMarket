@@ -6,15 +6,29 @@
 //
 
 import XCTest
+import Combine
 
-class FindAddressTests: XCTestCase {
+class TownListViewModelTests: XCTestCase {
+    struct TownListUseCaseStub: TownListUseCaseProtocol {
+        func setTownList(with position: Position) -> AnyPublisher<Bool, Error> {
+            return Future<Bool, Error> { promise in
+                promise(.success(true))
+            }.eraseToAnyPublisher()
+        }
+        
+        func lazySearch() -> AnyPublisher<[String], Error> {
+            return Future<[String], Error> { promise in
+                promise(.success(Array.init(repeating: "Test", count: 30)))
+            }.eraseToAnyPublisher()
+        }
+        
+        
+    }
 
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
     }
 
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
     func testExample() throws {
