@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A605B7B44DAE28D8EFD12050 /* Pods_ThunderMarket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4877B271766191A211B5E89 /* Pods_ThunderMarket.framework */; };
 		DD257A1B26FB0039009B8115 /* TownViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD257A1A26FB0039009B8115 /* TownViewModel.swift */; };
 		DD35D67626A2C7D200EAEA69 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD35D67526A2C7D200EAEA69 /* AppDelegate.swift */; };
 		DD35D67826A2C7D200EAEA69 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD35D67726A2C7D200EAEA69 /* SceneDelegate.swift */; };
@@ -45,6 +46,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		45D4D8B7CD5DBB4115BDB512 /* Pods-ThunderMarket.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThunderMarket.release.xcconfig"; path = "Target Support Files/Pods-ThunderMarket/Pods-ThunderMarket.release.xcconfig"; sourceTree = "<group>"; };
+		A4877B271766191A211B5E89 /* Pods_ThunderMarket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ThunderMarket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD257A1A26FB0039009B8115 /* TownViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TownViewModel.swift; sourceTree = "<group>"; };
 		DD35D67226A2C7D200EAEA69 /* ThunderMarket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThunderMarket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD35D67526A2C7D200EAEA69 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -55,7 +58,6 @@
 		DD35D68126A2C7D300EAEA69 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DD35D68326A2C7D300EAEA69 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DD35D68926A350D400EAEA69 /* map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map.png; sourceTree = "<group>"; };
-		DD3824F82778916200AF38CB /* PulseAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PulseAnimation.swift; sourceTree = "<group>"; };
 		DD38E88426DA8E50002D9FE6 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		DD475170271433AB00097865 /* TownListUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TownListUseCase.swift; sourceTree = "<group>"; };
 		DD63B28826AC830000E0B223 /* PhoneAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneAuthViewController.swift; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 		DDD935D826F65DFF0002CC49 /* TownListsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TownListsViewModel.swift; sourceTree = "<group>"; };
 		DDE85F7226D1E55200C47B21 /* Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
 		DDE85F7926D2231A00C47B21 /* Queue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
+		E2AFE51108AB92BE01DFFC88 /* Pods-ThunderMarket.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThunderMarket.debug.xcconfig"; path = "Target Support Files/Pods-ThunderMarket/Pods-ThunderMarket.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A605B7B44DAE28D8EFD12050 /* Pods_ThunderMarket.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,6 +97,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2A6C835C18D8F2F1CBDBB933 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A4877B271766191A211B5E89 /* Pods_ThunderMarket.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		DD35D66926A2C7D200EAEA69 = {
 			isa = PBXGroup;
 			children = (
@@ -100,6 +112,8 @@
 				DD35D67426A2C7D200EAEA69 /* ThunderMarket */,
 				DD6D94A12726E8A100D353D7 /* FindAddressTests */,
 				DD35D67326A2C7D200EAEA69 /* Products */,
+				E94A2A18ED7696543E04D206 /* Pods */,
+				2A6C835C18D8F2F1CBDBB933 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -190,6 +204,16 @@
 			path = Presenter;
 			sourceTree = "<group>";
 		};
+		E94A2A18ED7696543E04D206 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E2AFE51108AB92BE01DFFC88 /* Pods-ThunderMarket.debug.xcconfig */,
+				45D4D8B7CD5DBB4115BDB512 /* Pods-ThunderMarket.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -197,9 +221,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DD35D68626A2C7D300EAEA69 /* Build configuration list for PBXNativeTarget "ThunderMarket" */;
 			buildPhases = (
+				95C5A29EF5055C74263483E1 /* [CP] Check Pods Manifest.lock */,
 				DD35D66E26A2C7D200EAEA69 /* Sources */,
 				DD35D66F26A2C7D200EAEA69 /* Frameworks */,
 				DD35D67026A2C7D200EAEA69 /* Resources */,
+				56700E4402C8263202F61216 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -287,6 +313,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		56700E4402C8263202F61216 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ThunderMarket/Pods-ThunderMarket-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ThunderMarket/Pods-ThunderMarket-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ThunderMarket/Pods-ThunderMarket-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		95C5A29EF5055C74263483E1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ThunderMarket-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		DD35D66E26A2C7D200EAEA69 /* Sources */ = {
@@ -470,6 +538,7 @@
 		};
 		DD35D68726A2C7D300EAEA69 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E2AFE51108AB92BE01DFFC88 /* Pods-ThunderMarket.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -490,6 +559,7 @@
 		};
 		DD35D68826A2C7D300EAEA69 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 45D4D8B7CD5DBB4115BDB512 /* Pods-ThunderMarket.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
