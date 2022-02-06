@@ -50,6 +50,8 @@
 		DDF0F44227B036C700E04120 /* AddressRIBTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF0F44127B036C700E04120 /* AddressRIBTests.swift */; };
 		DDF0F44A27B036D700E04120 /* AddressInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF0F44827B036D700E04120 /* AddressInteractorTests.swift */; };
 		DDF0F44B27B036D700E04120 /* AddressRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF0F44927B036D700E04120 /* AddressRouterTests.swift */; };
+		DDF0F44E27B0481C00E04120 /* AutoMockable.stencil in Resources */ = {isa = PBXBuildFile; fileRef = DDF0F44D27B0481C00E04120 /* AutoMockable.stencil */; };
+		DDF0F45127B0485600E04120 /* AutoMocable.generate.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF0F45027B0485600E04120 /* AutoMocable.generate.swift.swift */; };
 		FEC8ADF6EB620FA574AC945E /* Pods_ThunderMarket_AddressRIBTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D36AB4ED4602B1E9B780E89E /* Pods_ThunderMarket_AddressRIBTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -127,6 +129,8 @@
 		DDF0F44127B036C700E04120 /* AddressRIBTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressRIBTests.swift; sourceTree = "<group>"; };
 		DDF0F44827B036D700E04120 /* AddressInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressInteractorTests.swift; sourceTree = "<group>"; };
 		DDF0F44927B036D700E04120 /* AddressRouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressRouterTests.swift; sourceTree = "<group>"; };
+		DDF0F44D27B0481C00E04120 /* AutoMockable.stencil */ = {isa = PBXFileReference; lastKnownFileType = text; path = AutoMockable.stencil; sourceTree = "<group>"; };
+		DDF0F45027B0485600E04120 /* AutoMocable.generate.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoMocable.generate.swift.swift; sourceTree = "<group>"; };
 		E2AFE51108AB92BE01DFFC88 /* Pods-ThunderMarket.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThunderMarket.debug.xcconfig"; path = "Target Support Files/Pods-ThunderMarket/Pods-ThunderMarket.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -176,6 +180,7 @@
 		DD35D66926A2C7D200EAEA69 = {
 			isa = PBXGroup;
 			children = (
+				DDF0F44C27B047F300E04120 /* Templates */,
 				DD85EFFF26ECF51300347FA1 /* Location.gpx */,
 				DD35D67426A2C7D200EAEA69 /* ThunderMarket */,
 				DDF0F42B27B003C900E04120 /* AddressFinderTests */,
@@ -322,11 +327,28 @@
 		DDF0F44027B036C700E04120 /* AddressRIBTests */ = {
 			isa = PBXGroup;
 			children = (
+				DDF0F44F27B0483D00E04120 /* AutoMockable */,
 				DDF0F44127B036C700E04120 /* AddressRIBTests.swift */,
 				DDF0F44827B036D700E04120 /* AddressInteractorTests.swift */,
 				DDF0F44927B036D700E04120 /* AddressRouterTests.swift */,
 			);
 			path = AddressRIBTests;
+			sourceTree = "<group>";
+		};
+		DDF0F44C27B047F300E04120 /* Templates */ = {
+			isa = PBXGroup;
+			children = (
+				DDF0F44D27B0481C00E04120 /* AutoMockable.stencil */,
+			);
+			path = Templates;
+			sourceTree = "<group>";
+		};
+		DDF0F44F27B0483D00E04120 /* AutoMockable */ = {
+			isa = PBXGroup;
+			children = (
+				DDF0F45027B0485600E04120 /* AutoMocable.generate.swift.swift */,
+			);
+			path = AutoMockable;
 			sourceTree = "<group>";
 		};
 		E94A2A18ED7696543E04D206 /* Pods */ = {
@@ -473,6 +495,7 @@
 				DD35D68A26A350D400EAEA69 /* Logo.png in Resources */,
 				DD35D68226A2C7D300EAEA69 /* LaunchScreen.storyboard in Resources */,
 				DD38E88526DA8E50002D9FE6 /* Settings.bundle in Resources */,
+				DDF0F44E27B0481C00E04120 /* AutoMockable.stencil in Resources */,
 				DD35D67F26A2C7D300EAEA69 /* Assets.xcassets in Resources */,
 				DD85F00026ECF51300347FA1 /* Location.gpx in Resources */,
 				DD35D67D26A2C7D200EAEA69 /* Main.storyboard in Resources */,
@@ -644,6 +667,7 @@
 			files = (
 				DDF0F44227B036C700E04120 /* AddressRIBTests.swift in Sources */,
 				DDF0F44A27B036D700E04120 /* AddressInteractorTests.swift in Sources */,
+				DDF0F45127B0485600E04120 /* AutoMocable.generate.swift.swift in Sources */,
 				DDF0F44B27B036D700E04120 /* AddressRouterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
