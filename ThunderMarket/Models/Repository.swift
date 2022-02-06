@@ -6,29 +6,21 @@
 //
 
 import Foundation
-import Combine
 
-protocol LocalRepository {
-    func loadMapData() -> AnyPublisher<Map, Error>
-}
-
-class MapRepository: LocalRepository {
-    enum loadMapError: Error {
-        case loadMapFail
-    }
+class MapRepositoryImpl: MapRepository {
     
-    func loadMapData() -> AnyPublisher<Map, Error> {
-        let subject = PassthroughSubject<Map, Error>()
-        DispatchQueue.global().async {
-            guard let url = Bundle.main.url(forResource: "map", withExtension: ".json"),
-                  let data = try? Data(contentsOf: url),
-                  let town = try? JSONDecoder().decode(Map.self, from: data)
-            else {
-                subject.send(completion: .failure(loadMapError.loadMapFail))
-                return
-            }
-            subject.send(town)
+    func findMap() -> Map? {
+        guard let url = Bundle.main.url(forResource: "map", withExtension: "json") else {
+            return nil
         }
-        return subject.eraseToAnyPublisher()
+    
+        guard let data = try? Data(contentsOf: url) else {
+            return nil
+        }
+        
+        guard let town = try? JSONDecoder().decode(Map.self, from: data) else {
+            return nil
+        }
+        return town
     }
 }

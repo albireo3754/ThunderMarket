@@ -7,12 +7,10 @@
 
 import Foundation
 
-class Town {
-    typealias Position = (x: Double, y: Double)
+class AddressFinder {
     private(set) var list = [String]()
     private let map: Map
     private var cnt = 0
-    private let dividedUnit = 30
     private var queue = Queue<(i: Int, j: Int)>()
     private var visited: [[Bool]]
 
@@ -24,13 +22,13 @@ class Town {
         self.visited = map.visited
     }
 
-    func search() -> [String] {
-        return dividedBfs()
+    func search(count: Int) -> [String] {
+        return dividedBfs(count: count)
     }
     
-    private func dividedBfs() -> [String] {
+    private func dividedBfs(count: Int) -> [String] {
         list = []
-        let upperBound = dividedUnit
+        let upperBound = count
         let direction = [(1, 0), (0, 1), (-1, 0), (0, -1)]
         while queue.count != 0 {
             guard let (i, j) = queue.top else {

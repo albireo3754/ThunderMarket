@@ -8,13 +8,17 @@
 import RIBs
 import RxSwift
 
+protocol MapRepository {
+    func findMap() -> Map?
+}
+
 protocol AddressRouting: ViewableRouting {
     // TODO: Declare methods the interactor can invoke to manage sub-tree via the router.
 }
 
 protocol AddressPresentable: Presentable {
     var listener: AddressPresentableListener? { get set }
-    // TODO: Declare methods the interactor can invoke the presenter to present data.
+    func updateTable()
 }
 
 protocol AddressListener: AnyObject {
@@ -22,15 +26,36 @@ protocol AddressListener: AnyObject {
 }
 
 final class AddressInteractor: PresentableInteractor<AddressPresentable>, AddressInteractable, AddressPresentableListener {
-
+    
     weak var router: AddressRouting?
     weak var listener: AddressListener?
+    
+    var mapRepository: MapRepository?
+    var addressFinder: AddressFinder?
+    var addressList: [String] = []
 
     // TODO: Add additional dependencies to constructor. Do not perform any logic
     // in constructor.
-    override init(presenter: AddressPresentable) {
+    init(presenter: AddressPresentable, mapRepository: MapRepository) {
+        self.mapRepository = mapRepository
         super.init(presenter: presenter)
         presenter.listener = self
+    }
+    
+    func setCenter(position: Position) {
+        guard let map = mapRepository?.findMap() else {
+            //TODO: Map Error처리 하기
+            return
+        }
+
+        addressFinder = AddressFinder(center: position, map: map)
+    }
+    
+    func searchExtraAddress(count: Int) {
+        guard let extraAddress = addressFinder?.search(count: count) else {
+            return
+        }
+        addressList.append(contentsOf: extraAddress)
     }
 
     override func didBecomeActive() {

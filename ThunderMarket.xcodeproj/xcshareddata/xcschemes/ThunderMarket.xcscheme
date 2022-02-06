@@ -32,9 +32,19 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "DD6D949F2726E8A100D353D7"
-               BuildableName = "FindAddressTests.xctest"
-               BlueprintName = "FindAddressTests"
+               BlueprintIdentifier = "DDF0F42927B003C900E04120"
+               BuildableName = "AddressFinderTests.xctest"
+               BlueprintName = "AddressFinderTests"
+               ReferencedContainer = "container:ThunderMarket.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "DDF0F43E27B036C700E04120"
+               BuildableName = "AddressRIBTests.xctest"
+               BlueprintName = "AddressRIBTests"
                ReferencedContainer = "container:ThunderMarket.xcodeproj">
             </BuildableReference>
          </TestableReference>

@@ -1,0 +1,5 @@
+${PODS_ROOT}/Target Support Files/Pods-ThunderMarket-AddressRIBTests/Pods-ThunderMarket-AddressRIBTests-frameworks.sh
+${BUILT_PRODUCTS_DIR}/RIBs/RIBs.framework
+${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework
+${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework
+${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework

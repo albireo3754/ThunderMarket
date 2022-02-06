@@ -13,9 +13,9 @@ import RxSwift
 import SnapKit
 
 protocol AddressPresentableListener: AnyObject {
-    // TODO: Declare properties and methods that the view controller can invoke to perform
-    // business logic, such as signIn(). This protocol is implemented by the corresponding
-    // interactor class.
+    var addressList: [String] { get }
+    func setCenter(position: Position)
+    func searchExtraAddress(count: Int)
 }
 
 final class AddressViewController: UIViewController, AddressPresentable, AddressViewControllable {
@@ -29,6 +29,10 @@ final class AddressViewController: UIViewController, AddressPresentable, Address
         buildBackgroundView()
         buildFindAddressButton()
         buildAddressTableView()
+    }
+    
+    func updateTable() {
+        addressTableView?.reloadData()
     }
     
     private var locationManager: CLLocationManager?
@@ -95,14 +99,14 @@ extension AddressViewController: UITableViewDelegate {
 
 extension AddressViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return listener?.addressList.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let tableViewCell: AddressTableViewCell = tableView.dequeueReusableCell() else {
             return UITableViewCell()
         }
-        tableViewCell.configure(with: "우리집")
+        tableViewCell.configure(with: listener?.addressList[indexPath.row] ?? "")
         return tableViewCell
     }
     
@@ -114,6 +118,8 @@ extension AddressViewController: UITableViewDataSource {
 extension AddressViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let location = locations[locations.count - 1]
+        listener?.setCenter(position: (x: location.coordinate.longitude, y: location.coordinate.latitude))
+        
 //        townListsViewModel?.fetchMapData(with: (x: location.coordinate.longitude, y: location.coordinate.latitude))
 //        townListsViewModel?.search()
 //        locationManager.stopUpdatingLocation()

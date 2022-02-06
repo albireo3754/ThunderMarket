@@ -9,5 +9,6 @@ target 'ThunderMarket' do
   pod 'RxSwift'
   pod 'RxCocoa'
   pod 'SnapKit'
-
+  target 'AddressRIBTests' do
+  end
 end
