@@ -43,6 +43,11 @@
 		DDD935D926F65DFF0002CC49 /* TownListsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD935D826F65DFF0002CC49 /* TownListsViewModel.swift */; };
 		DDE85F7326D1E55200C47B21 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE85F7226D1E55200C47B21 /* Map.swift */; };
 		DDE85F7A26D2231A00C47B21 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE85F7926D2231A00C47B21 /* Queue.swift */; };
+		DDF0F41227AFBEDB00E04120 /* AddressRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF0F40E27AFBEDB00E04120 /* AddressRouter.swift */; };
+		DDF0F41327AFBEDB00E04120 /* AddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF0F40F27AFBEDB00E04120 /* AddressViewController.swift */; };
+		DDF0F41427AFBEDB00E04120 /* AddressBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF0F41027AFBEDB00E04120 /* AddressBuilder.swift */; };
+		DDF0F41527AFBEDB00E04120 /* AddressInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF0F41127AFBEDB00E04120 /* AddressInteractor.swift */; };
+		DDF0F41727AFBEEA00E04120 /* RootComponent+Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF0F41627AFBEEA00E04120 /* RootComponent+Address.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +100,11 @@
 		DDD935D826F65DFF0002CC49 /* TownListsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TownListsViewModel.swift; sourceTree = "<group>"; };
 		DDE85F7226D1E55200C47B21 /* Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
 		DDE85F7926D2231A00C47B21 /* Queue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
+		DDF0F40E27AFBEDB00E04120 /* AddressRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressRouter.swift; sourceTree = "<group>"; };
+		DDF0F40F27AFBEDB00E04120 /* AddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressViewController.swift; sourceTree = "<group>"; };
+		DDF0F41027AFBEDB00E04120 /* AddressBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressBuilder.swift; sourceTree = "<group>"; };
+		DDF0F41127AFBEDB00E04120 /* AddressInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressInteractor.swift; sourceTree = "<group>"; };
+		DDF0F41627AFBEEA00E04120 /* RootComponent+Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RootComponent+Address.swift"; sourceTree = "<group>"; };
 		E2AFE51108AB92BE01DFFC88 /* Pods-ThunderMarket.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThunderMarket.debug.xcconfig"; path = "Target Support Files/Pods-ThunderMarket/Pods-ThunderMarket.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -168,12 +178,14 @@
 		DD5AECCD27AEB5190080ACE4 /* RootRIB */ = {
 			isa = PBXGroup;
 			children = (
+				DDF0F40D27AFBEA800E04120 /* AddressRIB */,
 				DD5AECDB27AEB8280080ACE4 /* LoggedOutRIB */,
 				DD5AECCF27AEB5360080ACE4 /* RootRouter.swift */,
 				DD5AECE427AEB9380080ACE4 /* RootComponent+LoggedOut.swift */,
 				DD5AECD027AEB5360080ACE4 /* RootViewController.swift */,
 				DD5AECD127AEB5360080ACE4 /* RootBuilder.swift */,
 				DD5AECD227AEB5360080ACE4 /* RootInteractor.swift */,
+				DDF0F41627AFBEEA00E04120 /* RootComponent+Address.swift */,
 			);
 			path = RootRIB;
 			sourceTree = "<group>";
@@ -256,6 +268,17 @@
 				DD85F00926EDDF6E00347FA1 /* FindAddress */,
 			);
 			path = Presenter;
+			sourceTree = "<group>";
+		};
+		DDF0F40D27AFBEA800E04120 /* AddressRIB */ = {
+			isa = PBXGroup;
+			children = (
+				DDF0F40E27AFBEDB00E04120 /* AddressRouter.swift */,
+				DDF0F40F27AFBEDB00E04120 /* AddressViewController.swift */,
+				DDF0F41027AFBEDB00E04120 /* AddressBuilder.swift */,
+				DDF0F41127AFBEDB00E04120 /* AddressInteractor.swift */,
+			);
+			path = AddressRIB;
 			sourceTree = "<group>";
 		};
 		E94A2A18ED7696543E04D206 /* Pods */ = {
@@ -419,6 +442,7 @@
 				DD5AECE127AEB8350080ACE4 /* LoggedOutViewController.swift in Sources */,
 				DD5AECE227AEB8350080ACE4 /* LoggedOutBuilder.swift in Sources */,
 				DD72355226A353B000ECC1A7 /* FindAddressViewController.swift in Sources */,
+				DDF0F41227AFBEDB00E04120 /* AddressRouter.swift in Sources */,
 				DD5AECD427AEB5360080ACE4 /* RootViewController.swift in Sources */,
 				DD35D67A26A2C7D200EAEA69 /* ViewController.swift in Sources */,
 				DD35D67626A2C7D200EAEA69 /* AppDelegate.swift in Sources */,
@@ -427,6 +451,7 @@
 				DD5AECD527AEB5360080ACE4 /* RootBuilder.swift in Sources */,
 				DDE85F7A26D2231A00C47B21 /* Queue.swift in Sources */,
 				DD5AECD927AEB5720080ACE4 /* AppComponent.swift in Sources */,
+				DDF0F41527AFBEDB00E04120 /* AddressInteractor.swift in Sources */,
 				DD5AECD627AEB5360080ACE4 /* RootInteractor.swift in Sources */,
 				DDE85F7326D1E55200C47B21 /* Map.swift in Sources */,
 				DD85F00326EDD7B200347FA1 /* FindAddressPresenter.swift in Sources */,
@@ -437,9 +462,12 @@
 				DD7AD035272049A900BDEA4B /* Repository.swift in Sources */,
 				DDD935D926F65DFF0002CC49 /* TownListsViewModel.swift in Sources */,
 				DD5AECE527AEB9380080ACE4 /* RootComponent+LoggedOut.swift in Sources */,
+				DDF0F41427AFBEDB00E04120 /* AddressBuilder.swift in Sources */,
+				DDF0F41327AFBEDB00E04120 /* AddressViewController.swift in Sources */,
 				DD5AECE027AEB8350080ACE4 /* LoggedOutRouter.swift in Sources */,
 				DD85F00826EDDF5E00347FA1 /* FindAddressPresenterProtocol.swift in Sources */,
 				DD35D67826A2C7D200EAEA69 /* SceneDelegate.swift in Sources */,
+				DDF0F41727AFBEEA00E04120 /* RootComponent+Address.swift in Sources */,
 				DD63B28926AC830000E0B223 /* PhoneAuthViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
