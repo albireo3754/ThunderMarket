@@ -16,6 +16,7 @@ protocol RootPresentableListener: AnyObject {
 }
 
 final class RootViewController: UINavigationController, RootPresentable, RootViewControllable {
+    
     func present(viewController: ViewControllable) {
         show(viewController.uiviewController, sender: nil)
     }
@@ -24,6 +25,10 @@ final class RootViewController: UINavigationController, RootPresentable, RootVie
         if presentedViewController == viewController.uiviewController {
             dismiss(animated: true, completion: nil)
         }
+    }
+    
+    func push(viewController: ViewControllable) {
+        pushViewController(viewController.uiviewController, animated: true)
     }
 
     weak var listener: RootPresentableListener?

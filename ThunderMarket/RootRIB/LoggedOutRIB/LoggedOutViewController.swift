@@ -5,16 +5,15 @@
 //  Created by 윤상진 on 2022/02/05.
 //
 
-import RIBs
-import RxSwift
 import UIKit
 
+import RIBs
+import RxSwift
+import RxCocoa
 import SnapKit
 
 protocol LoggedOutPresentableListener: AnyObject {
-    // TODO: Declare properties and methods that the view controller can invoke to perform
-    // business logic, such as signIn(). This protocol is implemented by the corresponding
-    // interactor class.
+    func startLogin()
 }
 
 final class LoggedOutViewController: UIViewController, LoggedOutPresentable, LoggedOutViewControllable {
@@ -33,6 +32,8 @@ final class LoggedOutViewController: UIViewController, LoggedOutPresentable, Log
     private var logoImageView: UIImageView?
     private var titleLabel: UILabel?
     private var startButton: UIButton?
+    
+    private var disposeBag = DisposeBag()
     
     private func buildBackgroundView() {
         view.backgroundColor = .white
@@ -72,6 +73,7 @@ final class LoggedOutViewController: UIViewController, LoggedOutPresentable, Log
         let startButton = UIButton()
         startButton.backgroundColor = .systemYellow
         startButton.setTitle("시작하기", for: .normal)
+        self.startButton = startButton
         
         view.addSubview(startButton)
         startButton.snp.makeConstraints { make in
@@ -80,5 +82,10 @@ final class LoggedOutViewController: UIViewController, LoggedOutPresentable, Log
             make.trailing.equalToSuperview().offset(-10)
             make.height.equalTo(50)
         }
+        
+        startButton.rx.tap.bind {
+            self.listener?.startLogin()
+        }
+        .disposed(by: disposeBag)
     }
 }
