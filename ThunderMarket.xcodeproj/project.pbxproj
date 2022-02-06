@@ -15,7 +15,7 @@
 		DD35D67D26A2C7D200EAEA69 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD35D67B26A2C7D200EAEA69 /* Main.storyboard */; };
 		DD35D67F26A2C7D300EAEA69 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD35D67E26A2C7D300EAEA69 /* Assets.xcassets */; };
 		DD35D68226A2C7D300EAEA69 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD35D68026A2C7D300EAEA69 /* LaunchScreen.storyboard */; };
-		DD35D68A26A350D400EAEA69 /* map.png in Resources */ = {isa = PBXBuildFile; fileRef = DD35D68926A350D400EAEA69 /* map.png */; };
+		DD35D68A26A350D400EAEA69 /* Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = DD35D68926A350D400EAEA69 /* Logo.png */; };
 		DD38E88526DA8E50002D9FE6 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DD38E88426DA8E50002D9FE6 /* Settings.bundle */; };
 		DD475171271433AB00097865 /* TownListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD475170271433AB00097865 /* TownListUseCase.swift */; };
 		DD5AECD327AEB5360080ACE4 /* RootRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5AECCF27AEB5360080ACE4 /* RootRouter.swift */; };
@@ -23,6 +23,11 @@
 		DD5AECD527AEB5360080ACE4 /* RootBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5AECD127AEB5360080ACE4 /* RootBuilder.swift */; };
 		DD5AECD627AEB5360080ACE4 /* RootInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5AECD227AEB5360080ACE4 /* RootInteractor.swift */; };
 		DD5AECD927AEB5720080ACE4 /* AppComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5AECD827AEB5720080ACE4 /* AppComponent.swift */; };
+		DD5AECE027AEB8350080ACE4 /* LoggedOutRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5AECDC27AEB8350080ACE4 /* LoggedOutRouter.swift */; };
+		DD5AECE127AEB8350080ACE4 /* LoggedOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5AECDD27AEB8350080ACE4 /* LoggedOutViewController.swift */; };
+		DD5AECE227AEB8350080ACE4 /* LoggedOutBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5AECDE27AEB8350080ACE4 /* LoggedOutBuilder.swift */; };
+		DD5AECE327AEB8350080ACE4 /* LoggedOutInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5AECDF27AEB8350080ACE4 /* LoggedOutInteractor.swift */; };
+		DD5AECE527AEB9380080ACE4 /* RootComponent+LoggedOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5AECE427AEB9380080ACE4 /* RootComponent+LoggedOut.swift */; };
 		DD63B28926AC830000E0B223 /* PhoneAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD63B28826AC830000E0B223 /* PhoneAuthViewController.swift */; };
 		DD6D94A32726E8A100D353D7 /* TownListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6D94A22726E8A100D353D7 /* TownListViewModelTests.swift */; };
 		DD6D94AA2726E98100D353D7 /* TownListUseCaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6D94A92726E98100D353D7 /* TownListUseCaseProtocol.swift */; };
@@ -62,7 +67,7 @@
 		DD35D67E26A2C7D300EAEA69 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DD35D68126A2C7D300EAEA69 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DD35D68326A2C7D300EAEA69 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DD35D68926A350D400EAEA69 /* map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map.png; sourceTree = "<group>"; };
+		DD35D68926A350D400EAEA69 /* Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo.png; sourceTree = "<group>"; };
 		DD38E88426DA8E50002D9FE6 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		DD475170271433AB00097865 /* TownListUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TownListUseCase.swift; sourceTree = "<group>"; };
 		DD5AECCF27AEB5360080ACE4 /* RootRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootRouter.swift; sourceTree = "<group>"; };
@@ -70,6 +75,11 @@
 		DD5AECD127AEB5360080ACE4 /* RootBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootBuilder.swift; sourceTree = "<group>"; };
 		DD5AECD227AEB5360080ACE4 /* RootInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootInteractor.swift; sourceTree = "<group>"; };
 		DD5AECD827AEB5720080ACE4 /* AppComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppComponent.swift; sourceTree = "<group>"; };
+		DD5AECDC27AEB8350080ACE4 /* LoggedOutRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedOutRouter.swift; sourceTree = "<group>"; };
+		DD5AECDD27AEB8350080ACE4 /* LoggedOutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedOutViewController.swift; sourceTree = "<group>"; };
+		DD5AECDE27AEB8350080ACE4 /* LoggedOutBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedOutBuilder.swift; sourceTree = "<group>"; };
+		DD5AECDF27AEB8350080ACE4 /* LoggedOutInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedOutInteractor.swift; sourceTree = "<group>"; };
+		DD5AECE427AEB9380080ACE4 /* RootComponent+LoggedOut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RootComponent+LoggedOut.swift"; sourceTree = "<group>"; };
 		DD63B28826AC830000E0B223 /* PhoneAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneAuthViewController.swift; sourceTree = "<group>"; };
 		DD6D94A02726E8A100D353D7 /* FindAddressTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FindAddressTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD6D94A22726E8A100D353D7 /* TownListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TownListViewModelTests.swift; sourceTree = "<group>"; };
@@ -149,7 +159,7 @@
 				DD35D67B26A2C7D200EAEA69 /* Main.storyboard */,
 				DD35D67E26A2C7D300EAEA69 /* Assets.xcassets */,
 				DD35D68026A2C7D300EAEA69 /* LaunchScreen.storyboard */,
-				DD35D68926A350D400EAEA69 /* map.png */,
+				DD35D68926A350D400EAEA69 /* Logo.png */,
 				DD35D68326A2C7D300EAEA69 /* Info.plist */,
 			);
 			path = ThunderMarket;
@@ -158,7 +168,9 @@
 		DD5AECCD27AEB5190080ACE4 /* RootRIB */ = {
 			isa = PBXGroup;
 			children = (
+				DD5AECDB27AEB8280080ACE4 /* LoggedOutRIB */,
 				DD5AECCF27AEB5360080ACE4 /* RootRouter.swift */,
+				DD5AECE427AEB9380080ACE4 /* RootComponent+LoggedOut.swift */,
 				DD5AECD027AEB5360080ACE4 /* RootViewController.swift */,
 				DD5AECD127AEB5360080ACE4 /* RootBuilder.swift */,
 				DD5AECD227AEB5360080ACE4 /* RootInteractor.swift */,
@@ -174,6 +186,17 @@
 				DD5AECD827AEB5720080ACE4 /* AppComponent.swift */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		DD5AECDB27AEB8280080ACE4 /* LoggedOutRIB */ = {
+			isa = PBXGroup;
+			children = (
+				DD5AECDC27AEB8350080ACE4 /* LoggedOutRouter.swift */,
+				DD5AECDD27AEB8350080ACE4 /* LoggedOutViewController.swift */,
+				DD5AECDE27AEB8350080ACE4 /* LoggedOutBuilder.swift */,
+				DD5AECDF27AEB8350080ACE4 /* LoggedOutInteractor.swift */,
+			);
+			path = LoggedOutRIB;
 			sourceTree = "<group>";
 		};
 		DD6A5FF526DB9B51008D5DF8 /* Controllers */ = {
@@ -326,7 +349,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DD35D68A26A350D400EAEA69 /* map.png in Resources */,
+				DD35D68A26A350D400EAEA69 /* Logo.png in Resources */,
 				DD35D68226A2C7D300EAEA69 /* LaunchScreen.storyboard in Resources */,
 				DD38E88526DA8E50002D9FE6 /* Settings.bundle in Resources */,
 				DD35D67F26A2C7D300EAEA69 /* Assets.xcassets in Resources */,
@@ -392,6 +415,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD85F00626EDDF3E00347FA1 /* FindAddressViewProtocol.swift in Sources */,
+				DD5AECE327AEB8350080ACE4 /* LoggedOutInteractor.swift in Sources */,
+				DD5AECE127AEB8350080ACE4 /* LoggedOutViewController.swift in Sources */,
+				DD5AECE227AEB8350080ACE4 /* LoggedOutBuilder.swift in Sources */,
 				DD72355226A353B000ECC1A7 /* FindAddressViewController.swift in Sources */,
 				DD5AECD427AEB5360080ACE4 /* RootViewController.swift in Sources */,
 				DD35D67A26A2C7D200EAEA69 /* ViewController.swift in Sources */,
@@ -410,6 +436,8 @@
 				DD72355426A45B2B00ECC1A7 /* Town.swift in Sources */,
 				DD7AD035272049A900BDEA4B /* Repository.swift in Sources */,
 				DDD935D926F65DFF0002CC49 /* TownListsViewModel.swift in Sources */,
+				DD5AECE527AEB9380080ACE4 /* RootComponent+LoggedOut.swift in Sources */,
+				DD5AECE027AEB8350080ACE4 /* LoggedOutRouter.swift in Sources */,
 				DD85F00826EDDF5E00347FA1 /* FindAddressPresenterProtocol.swift in Sources */,
 				DD35D67826A2C7D200EAEA69 /* SceneDelegate.swift in Sources */,
 				DD63B28926AC830000E0B223 /* PhoneAuthViewController.swift in Sources */,
