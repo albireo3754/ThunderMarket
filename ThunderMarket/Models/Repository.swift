@@ -7,7 +7,7 @@
 
 import Foundation
 
-class MapRepositoryImpl: MapRepository {
+class MapRepository: MapRepositoriable {
     
     func findMap() -> Map? {
         guard let url = Bundle.main.url(forResource: "map", withExtension: "json") else {

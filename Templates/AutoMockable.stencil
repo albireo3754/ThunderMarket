@@ -3,7 +3,10 @@
 
 import Foundation
 #if os(iOS) || os(tvOS) || os(watchOS)
+@testable import ThunderMarket
 import UIKit
+import RIBs
+import RxSwift
 #elseif os(OSX)
 import AppKit
 #endif

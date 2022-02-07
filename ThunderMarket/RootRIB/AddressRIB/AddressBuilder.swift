@@ -32,7 +32,7 @@ final class AddressBuilder: Builder<AddressDependency>, AddressBuildable {
     func build(withListener listener: AddressListener) -> AddressRouting {
         let component = AddressComponent(dependency: dependency)
         let viewController = AddressViewController()
-        let interactor = AddressInteractor(presenter: viewController, mapRepository: MapRepositoryImpl())
+        let interactor = AddressInteractor(presenter: viewController, mapRepository: MapRepository())
         interactor.listener = listener
         return AddressRouter(interactor: interactor, viewController: viewController)
     }

@@ -8,7 +8,7 @@
 import RIBs
 import RxSwift
 
-protocol MapRepository {
+protocol MapRepositoriable {
     func findMap() -> Map?
 }
 
@@ -30,13 +30,14 @@ final class AddressInteractor: PresentableInteractor<AddressPresentable>, Addres
     weak var router: AddressRouting?
     weak var listener: AddressListener?
     
-    var mapRepository: MapRepository?
-    var addressFinder: AddressFinder?
     var addressList: [String] = []
 
+    private var mapRepository: MapRepositoriable?
+    private var addressFinder: AddressFinder?
+    
     // TODO: Add additional dependencies to constructor. Do not perform any logic
     // in constructor.
-    init(presenter: AddressPresentable, mapRepository: MapRepository) {
+    init(presenter: AddressPresentable, mapRepository: MapRepositoriable) {
         self.mapRepository = mapRepository
         super.init(presenter: presenter)
         presenter.listener = self

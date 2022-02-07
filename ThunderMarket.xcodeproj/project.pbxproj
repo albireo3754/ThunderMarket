@@ -31,7 +31,6 @@
 		DD7AD035272049A900BDEA4B /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7AD034272049A900BDEA4B /* Repository.swift */; };
 		DD85F00026ECF51300347FA1 /* Location.gpx in Resources */ = {isa = PBXBuildFile; fileRef = DD85EFFF26ECF51300347FA1 /* Location.gpx */; };
 		DD85F00626EDDF3E00347FA1 /* FindAddressViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD85F00526EDDF3E00347FA1 /* FindAddressViewProtocol.swift */; };
-		DDD935D726F64D730002CC49 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD935D626F64D730002CC49 /* Observable.swift */; };
 		DDE85F7326D1E55200C47B21 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE85F7226D1E55200C47B21 /* Map.swift */; };
 		DDE85F7A26D2231A00C47B21 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE85F7926D2231A00C47B21 /* Queue.swift */; };
 		DDF0F41227AFBEDB00E04120 /* AddressRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF0F40E27AFBEDB00E04120 /* AddressRouter.swift */; };
@@ -41,35 +40,17 @@
 		DDF0F41727AFBEEA00E04120 /* RootComponent+Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF0F41627AFBEEA00E04120 /* RootComponent+Address.swift */; };
 		DDF0F41B27AFCB5500E04120 /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF0F41A27AFCB5500E04120 /* UITableView+Extension.swift */; };
 		DDF0F42527AFE64E00E04120 /* AddressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF0F42427AFE64E00E04120 /* AddressTableViewCell.swift */; };
-		DDF0F42D27B003C900E04120 /* AddressFinderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF0F42C27B003C900E04120 /* AddressFinderTests.swift */; };
-		DDF0F43327B0068800E04120 /* AddressFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD72355326A45B2B00ECC1A7 /* AddressFinder.swift */; };
 		DDF0F43527B006D900E04120 /* Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF0F43427B006D900E04120 /* Position.swift */; };
-		DDF0F43627B0070C00E04120 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE85F7226D1E55200C47B21 /* Map.swift */; };
-		DDF0F43727B0073200E04120 /* Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF0F43427B006D900E04120 /* Position.swift */; };
 		DDF0F43A27B00F7100E04120 /* map.json in Resources */ = {isa = PBXBuildFile; fileRef = DDF0F43927B00F7100E04120 /* map.json */; };
 		DDF0F44227B036C700E04120 /* AddressRIBTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF0F44127B036C700E04120 /* AddressRIBTests.swift */; };
 		DDF0F44A27B036D700E04120 /* AddressInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF0F44827B036D700E04120 /* AddressInteractorTests.swift */; };
 		DDF0F44B27B036D700E04120 /* AddressRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF0F44927B036D700E04120 /* AddressRouterTests.swift */; };
 		DDF0F44E27B0481C00E04120 /* AutoMockable.stencil in Resources */ = {isa = PBXBuildFile; fileRef = DDF0F44D27B0481C00E04120 /* AutoMockable.stencil */; };
-		DDF0F45127B0485600E04120 /* AutoMocable.generate.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF0F45027B0485600E04120 /* AutoMocable.generate.swift.swift */; };
+		DDF0F45127B0485600E04120 /* AutoMockable.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF0F45027B0485600E04120 /* AutoMockable.generated.swift */; };
 		FEC8ADF6EB620FA574AC945E /* Pods_ThunderMarket_AddressRIBTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D36AB4ED4602B1E9B780E89E /* Pods_ThunderMarket_AddressRIBTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		DD6D94A42726E8A100D353D7 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DD35D66A26A2C7D200EAEA69 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = DD35D67126A2C7D200EAEA69;
-			remoteInfo = ThunderMarket;
-		};
-		DDF0F42E27B003C900E04120 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DD35D66A26A2C7D200EAEA69 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = DD35D67126A2C7D200EAEA69;
-			remoteInfo = ThunderMarket;
-		};
 		DDF0F44327B036C700E04120 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DD35D66A26A2C7D200EAEA69 /* Project object */;
@@ -106,12 +87,10 @@
 		DD5AECDF27AEB8350080ACE4 /* LoggedOutInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedOutInteractor.swift; sourceTree = "<group>"; };
 		DD5AECE427AEB9380080ACE4 /* RootComponent+LoggedOut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RootComponent+LoggedOut.swift"; sourceTree = "<group>"; };
 		DD63B28826AC830000E0B223 /* PhoneAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneAuthViewController.swift; sourceTree = "<group>"; };
-		DD6D94A02726E8A100D353D7 /* FindAddressTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FindAddressTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD72355326A45B2B00ECC1A7 /* AddressFinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressFinder.swift; sourceTree = "<group>"; };
 		DD7AD034272049A900BDEA4B /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		DD85EFFF26ECF51300347FA1 /* Location.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Location.gpx; sourceTree = "<group>"; };
 		DD85F00526EDDF3E00347FA1 /* FindAddressViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindAddressViewProtocol.swift; sourceTree = "<group>"; };
-		DDD935D626F64D730002CC49 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		DDE85F7226D1E55200C47B21 /* Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
 		DDE85F7926D2231A00C47B21 /* Queue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
 		DDF0F40E27AFBEDB00E04120 /* AddressRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressRouter.swift; sourceTree = "<group>"; };
@@ -121,7 +100,6 @@
 		DDF0F41627AFBEEA00E04120 /* RootComponent+Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RootComponent+Address.swift"; sourceTree = "<group>"; };
 		DDF0F41A27AFCB5500E04120 /* UITableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
 		DDF0F42427AFE64E00E04120 /* AddressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressTableViewCell.swift; sourceTree = "<group>"; };
-		DDF0F42A27B003C900E04120 /* AddressFinderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AddressFinderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDF0F42C27B003C900E04120 /* AddressFinderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressFinderTests.swift; sourceTree = "<group>"; };
 		DDF0F43427B006D900E04120 /* Position.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Position.swift; sourceTree = "<group>"; };
 		DDF0F43927B00F7100E04120 /* map.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = map.json; sourceTree = SOURCE_ROOT; };
@@ -130,7 +108,7 @@
 		DDF0F44827B036D700E04120 /* AddressInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressInteractorTests.swift; sourceTree = "<group>"; };
 		DDF0F44927B036D700E04120 /* AddressRouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressRouterTests.swift; sourceTree = "<group>"; };
 		DDF0F44D27B0481C00E04120 /* AutoMockable.stencil */ = {isa = PBXFileReference; lastKnownFileType = text; path = AutoMockable.stencil; sourceTree = "<group>"; };
-		DDF0F45027B0485600E04120 /* AutoMocable.generate.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoMocable.generate.swift.swift; sourceTree = "<group>"; };
+		DDF0F45027B0485600E04120 /* AutoMockable.generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoMockable.generated.swift; sourceTree = "<group>"; };
 		E2AFE51108AB92BE01DFFC88 /* Pods-ThunderMarket.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThunderMarket.debug.xcconfig"; path = "Target Support Files/Pods-ThunderMarket/Pods-ThunderMarket.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -140,20 +118,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A605B7B44DAE28D8EFD12050 /* Pods_ThunderMarket.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DD6D949D2726E8A100D353D7 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DDF0F42727B003C900E04120 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -195,8 +159,6 @@
 			isa = PBXGroup;
 			children = (
 				DD35D67226A2C7D200EAEA69 /* ThunderMarket.app */,
-				DD6D94A02726E8A100D353D7 /* FindAddressTests.xctest */,
-				DDF0F42A27B003C900E04120 /* AddressFinderTests.xctest */,
 				DDF0F43F27B036C700E04120 /* AddressRIBTests.xctest */,
 			);
 			name = Products;
@@ -273,7 +235,6 @@
 				DDE85F7226D1E55200C47B21 /* Map.swift */,
 				DD72355326A45B2B00ECC1A7 /* AddressFinder.swift */,
 				DDE85F7926D2231A00C47B21 /* Queue.swift */,
-				DDD935D626F64D730002CC49 /* Observable.swift */,
 				DD7AD034272049A900BDEA4B /* Repository.swift */,
 				DDF0F43427B006D900E04120 /* Position.swift */,
 			);
@@ -346,7 +307,7 @@
 		DDF0F44F27B0483D00E04120 /* AutoMockable */ = {
 			isa = PBXGroup;
 			children = (
-				DDF0F45027B0485600E04120 /* AutoMocable.generate.swift.swift */,
+				DDF0F45027B0485600E04120 /* AutoMockable.generated.swift */,
 			);
 			path = AutoMockable;
 			sourceTree = "<group>";
@@ -384,42 +345,6 @@
 			productReference = DD35D67226A2C7D200EAEA69 /* ThunderMarket.app */;
 			productType = "com.apple.product-type.application";
 		};
-		DD6D949F2726E8A100D353D7 /* FindAddressTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = DD6D94A82726E8A100D353D7 /* Build configuration list for PBXNativeTarget "FindAddressTests" */;
-			buildPhases = (
-				DD6D949C2726E8A100D353D7 /* Sources */,
-				DD6D949D2726E8A100D353D7 /* Frameworks */,
-				DD6D949E2726E8A100D353D7 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				DD6D94A52726E8A100D353D7 /* PBXTargetDependency */,
-			);
-			name = FindAddressTests;
-			productName = FindAddressTests;
-			productReference = DD6D94A02726E8A100D353D7 /* FindAddressTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		DDF0F42927B003C900E04120 /* AddressFinderTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = DDF0F43027B003C900E04120 /* Build configuration list for PBXNativeTarget "AddressFinderTests" */;
-			buildPhases = (
-				DDF0F42627B003C900E04120 /* Sources */,
-				DDF0F42727B003C900E04120 /* Frameworks */,
-				DDF0F42827B003C900E04120 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				DDF0F42F27B003C900E04120 /* PBXTargetDependency */,
-			);
-			name = AddressFinderTests;
-			productName = AddressFinderTests;
-			productReference = DDF0F42A27B003C900E04120 /* AddressFinderTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		DDF0F43E27B036C700E04120 /* AddressRIBTests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = DDF0F44527B036C700E04120 /* Build configuration list for PBXNativeTarget "AddressRIBTests" */;
@@ -429,6 +354,7 @@
 				DDF0F43C27B036C700E04120 /* Frameworks */,
 				DDF0F43D27B036C700E04120 /* Resources */,
 				A2C60F1F6C4592062FDE8639 /* [CP] Embed Pods Frameworks */,
+				DDF0F45427B04A9400E04120 /* Run Script */,
 			);
 			buildRules = (
 			);
@@ -452,14 +378,6 @@
 					DD35D67126A2C7D200EAEA69 = {
 						CreatedOnToolsVersion = 12.5.1;
 					};
-					DD6D949F2726E8A100D353D7 = {
-						CreatedOnToolsVersion = 13.0;
-						TestTargetID = DD35D67126A2C7D200EAEA69;
-					};
-					DDF0F42927B003C900E04120 = {
-						CreatedOnToolsVersion = 13.1;
-						TestTargetID = DD35D67126A2C7D200EAEA69;
-					};
 					DDF0F43E27B036C700E04120 = {
 						CreatedOnToolsVersion = 13.1;
 						TestTargetID = DD35D67126A2C7D200EAEA69;
@@ -480,8 +398,6 @@
 			projectRoot = "";
 			targets = (
 				DD35D67126A2C7D200EAEA69 /* ThunderMarket */,
-				DD6D949F2726E8A100D353D7 /* FindAddressTests */,
-				DDF0F42927B003C900E04120 /* AddressFinderTests */,
 				DDF0F43E27B036C700E04120 /* AddressRIBTests */,
 			);
 		};
@@ -500,20 +416,6 @@
 				DD85F00026ECF51300347FA1 /* Location.gpx in Resources */,
 				DD35D67D26A2C7D200EAEA69 /* Main.storyboard in Resources */,
 				DDF0F43A27B00F7100E04120 /* map.json in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DD6D949E2726E8A100D353D7 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DDF0F42827B003C900E04120 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -605,6 +507,24 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ThunderMarket-AddressRIBTests/Pods-ThunderMarket-AddressRIBTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		DDF0F45427B04A9400E04120 /* Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "${PODS_ROOT}/Sourcery/bin/sourcery --templates ./Templates/ --output ./AddressRIBTests/AutoMockable/ --sources ./\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -621,7 +541,6 @@
 				DD35D67A26A2C7D200EAEA69 /* ViewController.swift in Sources */,
 				DD35D67626A2C7D200EAEA69 /* AppDelegate.swift in Sources */,
 				DD5AECD327AEB5360080ACE4 /* RootRouter.swift in Sources */,
-				DDD935D726F64D730002CC49 /* Observable.swift in Sources */,
 				DDF0F41B27AFCB5500E04120 /* UITableView+Extension.swift in Sources */,
 				DD5AECD527AEB5360080ACE4 /* RootBuilder.swift in Sources */,
 				DDE85F7A26D2231A00C47B21 /* Queue.swift in Sources */,
@@ -643,31 +562,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DD6D949C2726E8A100D353D7 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DDF0F42627B003C900E04120 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DDF0F43327B0068800E04120 /* AddressFinder.swift in Sources */,
-				DDF0F43627B0070C00E04120 /* Map.swift in Sources */,
-				DDF0F43727B0073200E04120 /* Position.swift in Sources */,
-				DDF0F42D27B003C900E04120 /* AddressFinderTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		DDF0F43B27B036C700E04120 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				DDF0F44227B036C700E04120 /* AddressRIBTests.swift in Sources */,
 				DDF0F44A27B036D700E04120 /* AddressInteractorTests.swift in Sources */,
-				DDF0F45127B0485600E04120 /* AutoMocable.generate.swift.swift in Sources */,
+				DDF0F45127B0485600E04120 /* AutoMockable.generated.swift in Sources */,
 				DDF0F44B27B036D700E04120 /* AddressRouterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -675,16 +576,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		DD6D94A52726E8A100D353D7 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = DD35D67126A2C7D200EAEA69 /* ThunderMarket */;
-			targetProxy = DD6D94A42726E8A100D353D7 /* PBXContainerItemProxy */;
-		};
-		DDF0F42F27B003C900E04120 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = DD35D67126A2C7D200EAEA69 /* ThunderMarket */;
-			targetProxy = DDF0F42E27B003C900E04120 /* PBXContainerItemProxy */;
-		};
 		DDF0F44427B036C700E04120 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = DD35D67126A2C7D200EAEA69 /* ThunderMarket */;
@@ -870,106 +761,6 @@
 			};
 			name = Release;
 		};
-		DD6D94A62726E8A100D353D7 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 6785P7H4GT;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = boostcamp.FindAddressTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ThunderMarket.app/ThunderMarket";
-			};
-			name = Debug;
-		};
-		DD6D94A72726E8A100D353D7 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 6785P7H4GT;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = boostcamp.FindAddressTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ThunderMarket.app/ThunderMarket";
-			};
-			name = Release;
-		};
-		DDF0F43127B003C900E04120 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 6785P7H4GT;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Albireo3754.AddressFinderTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ThunderMarket.app/ThunderMarket";
-			};
-			name = Debug;
-		};
-		DDF0F43227B003C900E04120 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 6785P7H4GT;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Albireo3754.AddressFinderTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ThunderMarket.app/ThunderMarket";
-			};
-			name = Release;
-		};
 		DDF0F44627B036C700E04120 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D1D07F0446EC281CFB8DC891 /* Pods-ThunderMarket-AddressRIBTests.debug.xcconfig */;
@@ -1039,24 +830,6 @@
 			buildConfigurations = (
 				DD35D68726A2C7D300EAEA69 /* Debug */,
 				DD35D68826A2C7D300EAEA69 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		DD6D94A82726E8A100D353D7 /* Build configuration list for PBXNativeTarget "FindAddressTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				DD6D94A62726E8A100D353D7 /* Debug */,
-				DD6D94A72726E8A100D353D7 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		DDF0F43027B003C900E04120 /* Build configuration list for PBXNativeTarget "AddressFinderTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				DDF0F43127B003C900E04120 /* Debug */,
-				DDF0F43227B003C900E04120 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

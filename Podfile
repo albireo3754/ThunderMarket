@@ -11,5 +11,7 @@ target 'ThunderMarket' do
   pod 'SnapKit'
   pod 'Sourcery'
   target 'AddressRIBTests' do
+    pod 'Quick'
+    pod 'Nimble'
   end
 end
