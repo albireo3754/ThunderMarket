@@ -7,6 +7,11 @@
 
 import RIBs
 import RxSwift
+import Foundation
+
+enum AddressInteractorError: Error {
+    case failSetAddress
+}
 
 protocol MapRepositoriable {
     func findMap() -> Map?
@@ -30,7 +35,7 @@ final class AddressInteractor: PresentableInteractor<AddressPresentable>, Addres
     weak var router: AddressRouting?
     weak var listener: AddressListener?
     
-    var addressList: [String] = []
+    var addressList: [String?] = []
 
     private var mapRepository: MapRepositoriable?
     private var addressFinder: AddressFinder?
@@ -43,20 +48,22 @@ final class AddressInteractor: PresentableInteractor<AddressPresentable>, Addres
         presenter.listener = self
     }
     
-    func setCenter(position: Position) {
+    func setCenter(position: Position) -> Result<Void, Error> {
         guard let map = mapRepository?.findMap() else {
             //TODO: Map Error처리 하기
-            return
+            return .failure(AddressInteractorError.failSetAddress)
         }
 
         addressFinder = AddressFinder(center: position, map: map)
+        return .success(())
     }
     
-    func searchExtraAddress(count: Int) {
+    func searchAddressList(count: Int) {
         guard let extraAddress = addressFinder?.search(count: count) else {
             return
         }
         addressList.append(contentsOf: extraAddress)
+        presenter.updateTable()
     }
 
     override func didBecomeActive() {

@@ -8,7 +8,7 @@
 import Foundation
 
 class AddressFinder {
-    private(set) var list = [String]()
+    private(set) var list = [String?]()
     private let map: Map
     private var cnt = 0
     private var queue = Queue<(i: Int, j: Int)>()
@@ -22,12 +22,12 @@ class AddressFinder {
         self.visited = map.visited
     }
 
-    func search(count: Int) -> [String] {
+    func search(count: Int) -> [String?] {
         return dividedBfs(count: count)
     }
     
-    private func dividedBfs(count: Int) -> [String] {
-        list = []
+    private func dividedBfs(count: Int) -> [String?] {
+        list = Array(repeating: nil, count: count)
         let upperBound = count
         let direction = [(1, 0), (0, 1), (-1, 0), (0, -1)]
         while queue.count != 0 {

@@ -14,4 +14,8 @@ target 'ThunderMarket' do
     pod 'Quick'
     pod 'Nimble'
   end
+  target 'ServiceTests' do
+    pod 'Quick'
+    pod 'Nimble'
+  end
 end

@@ -12,11 +12,6 @@ import RIBs
 import RxSwift
 import SnapKit
 
-protocol AddressPresentableListener: AnyObject {
-    var addressList: [String] { get }
-    func setCenter(position: Position)
-    func searchExtraAddress(count: Int)
-}
 
 final class AddressViewController: UIViewController, AddressPresentable, AddressViewControllable {
 

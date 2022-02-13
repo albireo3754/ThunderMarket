@@ -10,7 +10,7 @@ import Foundation
 class MapRepository: MapRepositoriable {
     
     func findMap() -> Map? {
-        guard let url = Bundle.main.url(forResource: "map", withExtension: "json") else {
+        guard let url = Bundle.main.url(forResource: "map.json", withExtension: nil) else {
             return nil
         }
     

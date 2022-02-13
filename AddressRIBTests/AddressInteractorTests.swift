@@ -5,7 +5,6 @@
 //  Created by 윤상진 on 2022/02/07.
 //
 
-@testable import ThunderMarket
 import XCTest
 
 import RIBs
@@ -34,6 +33,8 @@ final class AddressInteractorTests: XCTestCase {
         presenter = AddressPresentableMock()
         router = AddressRoutingMock()
         mapRepository = MapRepositoriableMock()
+        let mapStub = Map(i: 0, j: 0, scale: 0, grid: [[[]]])
+        mapRepository.findMapClosure = { mapStub }
         
         interactor = AddressInteractor(presenter: presenter, mapRepository: mapRepository)
         interactor.listener = listener
@@ -46,13 +47,32 @@ final class AddressInteractorTests: XCTestCase {
 
     func test_지도는_center를_정할때마다_작동한다() {
         // Given
+        let position = (x: 0.0, y: 0.0)
         
         // When
-        interactor.setCenter(position: (x: 0, y: 0))
-        interactor.setCenter(position: (x: 0, y: 0))
+        _ = interactor.setCenter(position: position)
+        let result = interactor.setCenter(position: position)
 
         // Then
         expect(self.mapRepository.findMapCallsCount) == 2
+        switch result {
+        case .success():
+            break
+        case .failure(_):
+            fail()
+        }
+    }
+    
+    func test_주소를_찾아라() {
+        // Given
+        _ = interactor.setCenter(position: (x: 0, y: 0))
+        let addressCount = 30
         
+        // When
+        interactor.searchAddressList(count: addressCount)
+        
+        // Then
+        expect(self.presenter.updateTableCallsCount) == 1
+        expect(self.interactor.addressList.count) == addressCount
     }
 }
