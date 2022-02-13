@@ -12,6 +12,7 @@ class AddressFinder {
     private let map: Map
     private var cnt = 0
     private var queue = Queue<(i: Int, j: Int)>()
+    private var secondQueue = Queue<String>()
     private var visited: [[Bool]]
 
     init(center: Position, map: Map) {
@@ -30,7 +31,9 @@ class AddressFinder {
         list = Array(repeating: nil, count: count)
         let upperBound = count
         let direction = [(1, 0), (0, 1), (-1, 0), (0, -1)]
-        while queue.count != 0 {
+        var index = 0
+        
+        while !queue.isEmpty() {
             guard let (i, j) = queue.top else {
                 continue
             }
@@ -42,13 +45,21 @@ class AddressFinder {
                     }
                     visited[ni][nj] = true
                     queue.append((ni, nj))
-                    list.append(contentsOf: map.grid[ni][nj])
-                }
-                if list.count >= upperBound {
-                    return list
+
+                    map.grid[ni][nj].forEach {
+                        secondQueue.append($0)
+                    }
+                    
                 }
             }
             queue.pop()
+            while !secondQueue.isEmpty() && index < upperBound {
+                list[index] = secondQueue.pop()
+                index += 1
+            }
+            if index == count {
+                return list
+            }
         }
         return list
     }

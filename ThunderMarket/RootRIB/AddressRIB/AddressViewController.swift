@@ -16,6 +16,7 @@ import SnapKit
 final class AddressViewController: UIViewController, AddressPresentable, AddressViewControllable {
 
     weak var listener: AddressPresentableListener?
+    private var isAuthorized = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -113,12 +114,12 @@ extension AddressViewController: UITableViewDataSource {
 extension AddressViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let location = locations[locations.count - 1]
-        listener?.setCenter(position: (x: location.coordinate.longitude, y: location.coordinate.latitude))
-        
-//        townListsViewModel?.fetchMapData(with: (x: location.coordinate.longitude, y: location.coordinate.latitude))
-//        townListsViewModel?.search()
-//        locationManager.stopUpdatingLocation()
-//        activityIndicator.stopAnimating()
+        if isAuthorized {
+            listener?.initAddress()
+            listener?.setCenter(position: (x: location.coordinate.longitude, y: location.coordinate.latitude))
+            listener?.searchAddressList(count: 30)
+        }
+        isAuthorized = false
     }
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
@@ -126,6 +127,7 @@ extension AddressViewController: CLLocationManagerDelegate {
     case .authorizedAlways, .authorizedWhenInUse:
         print("GPS 권한 설정됨")
         self.locationManager?.startUpdatingLocation()
+        isAuthorized = true
     case .restricted, .notDetermined:
         print("GPS 권한 설정되지 않음")
         getLocationUsagePermission()

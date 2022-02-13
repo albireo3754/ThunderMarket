@@ -7,6 +7,7 @@
 
 protocol AddressPresentableListener: AnyObject {
     var addressList: [String?] { get }
+    func initAddress()
     func setCenter(position: Position) -> Result<Void, Error>
     func searchAddressList(count: Int)
 }

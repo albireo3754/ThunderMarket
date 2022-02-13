@@ -48,6 +48,16 @@
                ReferencedContainer = "container:ThunderMarket.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "DD4ECDDA27B8FD8500879EAC"
+               BuildableName = "ThunderMarketTests.xctest"
+               BlueprintName = "ThunderMarketTests"
+               ReferencedContainer = "container:ThunderMarket.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

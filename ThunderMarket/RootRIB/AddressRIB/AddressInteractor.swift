@@ -48,6 +48,10 @@ final class AddressInteractor: PresentableInteractor<AddressPresentable>, Addres
         presenter.listener = self
     }
     
+    func initAddress() {
+        addressList = []
+    }
+    
     func setCenter(position: Position) -> Result<Void, Error> {
         guard let map = mapRepository?.findMap() else {
             //TODO: Map Error처리 하기

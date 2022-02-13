@@ -18,4 +18,8 @@ target 'ThunderMarket' do
     pod 'Quick'
     pod 'Nimble'
   end
+  target 'ThunderMarketTests' do
+    pod 'Quick'
+    pod 'Nimble'
+  end
 end

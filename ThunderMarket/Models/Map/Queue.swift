@@ -24,6 +24,10 @@ struct Queue<T> {
         return nil
     }
     
+    func isEmpty() -> Bool {
+        return count == 0
+    }
+    
     mutating func append(_ item: T) {
         stack1.append(item)
     }
