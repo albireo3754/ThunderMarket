@@ -17,6 +17,7 @@ final class AddressViewController: UIViewController, AddressPresentable, Address
 
     weak var listener: AddressPresentableListener?
     private var isAuthorized = false
+    private let searchSize = 30
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -90,7 +91,16 @@ final class AddressViewController: UIViewController, AddressPresentable, Address
 }
 
 extension AddressViewController: UITableViewDelegate {
-    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        guard let addressTableView = self.addressTableView else {
+            return
+        }
+        let scrollPosition = scrollView.contentOffset.y
+        let y = addressTableView.contentSize.height - scrollView.frame.height
+        if y - scrollPosition < CGFloat(150) {
+            listener?.searchAddressList(count: searchSize)
+        }
+    }
 }
 
 extension AddressViewController: UITableViewDataSource {
@@ -117,7 +127,7 @@ extension AddressViewController: CLLocationManagerDelegate {
         if isAuthorized {
             listener?.initAddress()
             listener?.setCenter(position: (x: location.coordinate.longitude, y: location.coordinate.latitude))
-            listener?.searchAddressList(count: 30)
+            listener?.searchAddressList(count: searchSize)
         }
         isAuthorized = false
     }

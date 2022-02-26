@@ -54,7 +54,6 @@ final class AddressInteractor: PresentableInteractor<AddressPresentable>, Addres
     
     func setCenter(position: Position) -> Result<Void, Error> {
         guard let map = mapRepository?.findMap() else {
-            //TODO: Map Error처리 하기
             return .failure(AddressInteractorError.failSetAddress)
         }
 

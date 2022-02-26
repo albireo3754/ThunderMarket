@@ -75,4 +75,20 @@ final class AddressInteractorTests: XCTestCase {
         expect(self.presenter.updateTableCallsCount) == 1
         expect(self.interactor.addressList.count) == addressCount
     }
+    
+    func test_이미주소를한번찾았다면_주소를초기화하는것이아니라_기존배열에추가한다() {
+        // Given
+        _ = interactor.setCenter(position: (x: 0, y: 0))
+        let addressCount = 30
+        let repeatCount = 2
+        
+        // When
+        for _ in 1...repeatCount {
+            interactor.searchAddressList(count: addressCount)
+        }
+        
+        // Then
+        expect(self.presenter.updateTableCallsCount) == repeatCount
+        expect(self.interactor.addressList.count) == addressCount * repeatCount
+    }
 }
